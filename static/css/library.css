@@ -1,55 +1,48 @@
 :root {
-  /* ========================================================= */
-  /* Palet 1: Oranye/Merah (Asli) - Ditandai dengan '-P1' */
-  /* ========================================================= */
+
+  /* Colonial White */
   --color-colonial-white-50: #FFF9EB;
-  --color-white-100: #FFEBDD;
-  --color-malachite-200: #FFDBB8;
-  --color-persian-red-300: #FFC24A;
-  --color-persian-red-400: #FFAA20;
-  --color-persian-red-500: #F98607;
-  --color-persian-red-600: #DD6002;
-  --color-persian-red-700: #B74106;
-  --color-persian-red-800: #94310C;
-  --color-persian-red-900: #7A290D;
-  --color-persian-red-950: #461302;
+  --color-colonial-white-100: #FFEBDD;
+  --color-colonial-white-200: #FFDB88;
+  --color-colonial-white-300: #FFC24A;
+  --color-colonial-white-400: #FFAA20;
+  --color-colonial-white-500: #F98607;
+  --color-colonial-white-600: #DD6002;
+  --color-colonial-white-700: #B74106;
+  --color-colonial-white-800: #94310C;
+  --color-colonial-white-900: #7A290D;
+  --color-colonial-white-950: #461302;
 
-  /* ========================================================= */
-  /* Palet 2: Abu-abu/Netral - Ditandai dengan '-P2' */
-  /* ========================================================= */
-  --color-colonial-white-50: #FFFFFF;
+  /* White */
+  --color-white-50: #FFFFFF;
   --color-white-100: #EFEFEF;
-  --color-malachite-200: #DCDCDC;
-  --color-persian-red-300: #BDBDBD;
-  --color-persian-red-400: #989898;
-  --color-persian-red-500: #7C7C7C;
-  --color-persian-red-600: #656565;
-  --color-persian-red-700: #525252;
-  --color-persian-red-800: #464646;
-  --color-persian-red-900: #3D3D3D;
-  --color-persian-red-950: #292929;
+  --color-white-200: #DCDCDC;
+  --color-white-300: #BDBDBD;
+  --color-white-400: #989898;
+  --color-white-500: #7C7C7C;
+  --color-white-600: #656565;
+  --color-white-700: #525252;
+  --color-white-800: #464646;
+  --color-white-900: #3D3D3D;
+  --color-white-950: #292929;
 
-  /* ========================================================= */
-  /* Palet 3: Hijau - Ditandai dengan '-P3' */
-  /* ========================================================= */
-  --color-colonial-white-50: #E1FBDD;
-  --color-white-100: #E1FBDD;
+  /* Malachite */
+  --color-malachite-50: #E1FBDD;
+  --color-malachite-100: #E1FBDD;
   --color-malachite-200: #C5F5BD;
-  --color-persian-red-300: #95EC89;
-  --color-persian-red-400: #5EDA4E;
-  --color-persian-red-500: #3AC828;
-  --color-persian-red-600: #299F1A;
-  --color-persian-red-700: #237D18;
-  --color-persian-red-800: #1F6318;
-  --color-persian-red-900: #1B5116;
-  --color-persian-red-950: #092D06;
+  --color-malachite-300: #95EC89;
+  --color-malachite-400: #5EDA4E;
+  --color-malachite-500: #3AC828;
+  --color-malachite-600: #299F1A;
+  --color-malachite-700: #237D18;
+  --color-malachite-800: #1F6318;
+  --color-malachite-900: #1B5116;
+  --color-malachite-950: #092D06;
 
-  /* ========================================================= */
-  /* Palet 4: Merah Muda/Merah - Ditandai dengan '-P4' */
-  /* ========================================================= */
-  --color-colonial-white-50: #FEF2F2;
-  --color-white-100: #FDE3E3;
-  --color-malachite-200: #FCCCCC;
+  /* Persian Red */
+  --color-persian-red-50: #FEF2F2;
+  --color-persian-red-100: #FDE3E3;
+  --color-persian-red-200: #FCCCCC;
   --color-persian-red-300: #F9A8A8;
   --color-persian-red-400: #F37676;
   --color-persian-red-500: #E84B4B;
@@ -63,7 +56,18 @@
 .font-montserrat {
     font-family: "Montserrat", sans-serif;
 }
-
+.w-fit {
+    width: fit-content;
+}
+.h-fit {
+    height: fit-content;
+}
+.w-full {
+    width: 100%;
+}
+.h-full {
+    height: 100%;
+}
 .d-flex {
     display: flex;
 }
@@ -85,155 +89,125 @@
 .justify-center {
     justify-content: center;
 }
+.justify-between {
+    justify-content: space-between;
+}
+.justify-evenly {
+    justify-content: space-evenly;
+}
 .items-center {
     align-items: center;
 }
-/* ========================================================= */
-/* BACKGROUND dan FONT COLOR - PALET 1 (Oranye/Merah Asli) */
-/* ========================================================= */
-.bg-colonial-white-50 { background-color: var(--color-colonial-white-50); }
-.text-colonial-white-50 { color: var(--color-colonial-white-50); }
-
-.bg-white-100 { background-color: var(--color-white-100); }
-.text-white-100 { color: var(--color-white-100); }
-
-.bg-malachite-200 { background-color: var(--color-malachite-200); }
-.text-malachite-200 { color: var(--color-malachite-200); }
-
-.bg-persian-red-300 { background-color: var(--color-persian-red-300); }
-.text-persian-red-300 { color: var(--color-persian-red-300); }
-
-.bg-persian-red-400 { background-color: var(--color-persian-red-400); }
-.text-persian-red-400 { color: var(--color-persian-red-400); }
-
-.bg-persian-red-500 { background-color: var(--color-persian-red-500); }
-.text-persian-red-500 { color: var(--color-persian-red-500); }
-
-.bg-persian-red-600 { background-color: var(--color-persian-red-600); }
-.text-persian-red-600 { color: var(--color-persian-red-600); }
-
-.bg-persian-red-700 { background-color: var(--color-persian-red-700); }
-.text-persian-red-700 { color: var(--color-persian-red-700); }
-
-.bg-persian-red-800 { background-color: var(--color-persian-red-800); }
-.text-persian-red-800 { color: var(--color-persian-red-800); }
-
-.bg-persian-red-900 { background-color: var(--color-persian-red-900); }
-.text-persian-red-900 { color: var(--color-persian-red-900); }
-
-.bg-persian-red-950 { background-color: var(--color-persian-red-950); }
-.text-persian-red-950 { color: var(--color-persian-red-950); }
+.container {
+    width: 1140px;
+    margin: auto;
+}
+.active {
+    font-weight: bold;
+}
+.font-bold {
+    font-weight: bold;
+}
+.text-center {
+    text-align: center;
+}
 
 /* --------------------------------------------------------- */
 
-/* ========================================================= */
-/* BACKGROUND dan FONT COLOR - PALET 2 (Abu-abu/Netral) */
-/* ========================================================= */
 .bg-colonial-white-50 { background-color: var(--color-colonial-white-50); }
-.text-colonial-white-50 { color: var(--color-colonial-white-50); }
+.bg-colonial-white-100 { background-color: var(--color-colonial-white-100); }
+.bg-colonial-white-200 { background-color: var(--color-colonial-white-200); }
+.bg-colonial-white-300 { background-color: var(--color-colonial-white-300); }
+.bg-colonial-white-400 { background-color: var(--color-colonial-white-400); }
+.bg-colonial-white-500 { background-color: var(--color-colonial-white-500); }
+.bg-colonial-white-600 { background-color: var(--color-colonial-white-600); }
+.bg-colonial-white-700 { background-color: var(--color-colonial-white-700); }
+.bg-colonial-white-800 { background-color: var(--color-colonial-white-800); }
+.bg-colonial-white-900 { background-color: var(--color-colonial-white-900); }
+.bg-colonial-white-950 { background-color: var(--color-colonial-white-950); }
 
+.bg-white-50 { background-color: var(--color-white-50); }
 .bg-white-100 { background-color: var(--color-white-100); }
-.text-white-100 { color: var(--color-white-100); }
+.bg-white-200 { background-color: var(--color-white-200); }
+.bg-white-300 { background-color: var(--color-white-300); }
+.bg-white-400 { background-color: var(--color-white-400); }
+.bg-white-500 { background-color: var(--color-white-500); }
+.bg-white-600 { background-color: var(--color-white-600); }
+.bg-white-700 { background-color: var(--color-white-700); }
+.bg-white-800 { background-color: var(--color-white-800); }
+.bg-white-900 { background-color: var(--color-white-900); }
+.bg-white-950 { background-color: var(--color-white-950); }
 
+.bg-malachite-50 { background-color: var(--color-malachite-50); }
+.bg-malachite-100 { background-color: var(--color-malachite-100); }
 .bg-malachite-200 { background-color: var(--color-malachite-200); }
-.text-malachite-200 { color: var(--color-malachite-200); }
+.bg-malachite-300 { background-color: var(--color-malachite-300); }
+.bg-malachite-400 { background-color: var(--color-malachite-400); }
+.bg-malachite-500 { background-color: var(--color-malachite-500); }
+.bg-malachite-600 { background-color: var(--color-malachite-600); }
+.bg-malachite-700 { background-color: var(--color-malachite-700); }
+.bg-malachite-800 { background-color: var(--color-malachite-800); }
+.bg-malachite-900 { background-color: var(--color-malachite-900); }
+.bg-malachite-950 { background-color: var(--color-malachite-950); }
 
+.bg-persian-red-50 { background-color: var(--color-persian-red-50); }
+.bg-persian-red-100 { background-color: var(--color-persian-red-100); }
+.bg-persian-red-200 { background-color: var(--color-persian-red-200); }
 .bg-persian-red-300 { background-color: var(--color-persian-red-300); }
-.text-persian-red-300 { color: var(--color-persian-red-300); }
-
 .bg-persian-red-400 { background-color: var(--color-persian-red-400); }
-.text-persian-red-400 { color: var(--color-persian-red-400); }
-
 .bg-persian-red-500 { background-color: var(--color-persian-red-500); }
-.text-persian-red-500 { color: var(--color-persian-red-500); }
-
 .bg-persian-red-600 { background-color: var(--color-persian-red-600); }
-.text-persian-red-600 { color: var(--color-persian-red-600); }
-
 .bg-persian-red-700 { background-color: var(--color-persian-red-700); }
-.text-persian-red-700 { color: var(--color-persian-red-700); }
-
 .bg-persian-red-800 { background-color: var(--color-persian-red-800); }
-.text-persian-red-800 { color: var(--color-persian-red-800); }
-
 .bg-persian-red-900 { background-color: var(--color-persian-red-900); }
-.text-persian-red-900 { color: var(--color-persian-red-900); }
-
 .bg-persian-red-950 { background-color: var(--color-persian-red-950); }
-.text-persian-red-950 { color: var(--color-persian-red-950); }
 
 /* --------------------------------------------------------- */
 
-/* ========================================================= */
-/* BACKGROUND dan FONT COLOR - PALET 3 (Hijau) */
-/* ========================================================= */
-.bg-colonial-white-50 { background-color: var(--color-colonial-white-50); }
 .text-colonial-white-50 { color: var(--color-colonial-white-50); }
+.text-colonial-white-100 { color: var(--color-colonial-white-100); }
+.text-colonial-white-200 { color: var(--color-colonial-white-200); }
+.text-colonial-white-300 { color: var(--color-colonial-white-300); }
+.text-colonial-white-400 { color: var(--color-colonial-white-400); }
+.text-colonial-white-500 { color: var(--color-colonial-white-500); }
+.text-colonial-white-600 { color: var(--color-colonial-white-600); }
+.text-colonial-white-700 { color: var(--color-colonial-white-700); }
+.text-colonial-white-800 { color: var(--color-colonial-white-800); }
+.text-colonial-white-900 { color: var(--color-colonial-white-900); }
+.text-colonial-white-950 { color: var(--color-colonial-white-950); }
 
-.bg-white-100 { background-color: var(--color-white-100); }
+.text-white-50 { color: var(--color-white-50); }
 .text-white-100 { color: var(--color-white-100); }
+.text-white-200 { color: var(--color-white-200); }
+.text-white-300 { color: var(--color-white-300); }
+.text-white-400 { color: var(--color-white-400); }
+.text-white-500 { color: var(--color-white-500); }
+.text-white-600 { color: var(--color-white-600); }
+.text-white-700 { color: var(--color-white-700); }
+.text-white-800 { color: var(--color-white-800); }
+.text-white-900 { color: var(--color-white-900); }
+.text-white-950 { color: var(--color-white-950); }
 
-.bg-malachite-200 { background-color: var(--color-malachite-200); }
+.text-malachite-50 { color: var(--color-malachite-50); }
+.text-malachite-100 { color: var(--color-malachite-100); }
 .text-malachite-200 { color: var(--color-malachite-200); }
+.text-malachite-300 { color: var(--color-malachite-300); }
+.text-malachite-400 { color: var(--color-malachite-400); }
+.text-malachite-500 { color: var(--color-malachite-500); }
+.text-malachite-600 { color: var(--color-malachite-600); }
+.text-malachite-700 { color: var(--color-malachite-700); }
+.text-malachite-800 { color: var(--color-malachite-800); }
+.text-malachite-900 { color: var(--color-malachite-900); }
+.text-malachite-950 { color: var(--color-malachite-950); }
 
-.bg-persian-red-300 { background-color: var(--color-persian-red-300); }
+.text-persian-red-50 { color: var(--color-persian-red-50); }
+.text-persian-red-100 { color: var(--color-persian-red-100); }
+.text-persian-red-200 { color: var(--color-persian-red-200); }
 .text-persian-red-300 { color: var(--color-persian-red-300); }
-
-.bg-persian-red-400 { background-color: var(--color-persian-red-400); }
 .text-persian-red-400 { color: var(--color-persian-red-400); }
-
-.bg-persian-red-500 { background-color: var(--color-persian-red-500); }
 .text-persian-red-500 { color: var(--color-persian-red-500); }
-
-.bg-persian-red-600 { background-color: var(--color-persian-red-600); }
 .text-persian-red-600 { color: var(--color-persian-red-600); }
-
-.bg-persian-red-700 { background-color: var(--color-persian-red-700); }
 .text-persian-red-700 { color: var(--color-persian-red-700); }
-
-.bg-persian-red-800 { background-color: var(--color-persian-red-800); }
 .text-persian-red-800 { color: var(--color-persian-red-800); }
-
-.bg-persian-red-900 { background-color: var(--color-persian-red-900); }
 .text-persian-red-900 { color: var(--color-persian-red-900); }
-
-.bg-persian-red-950 { background-color: var(--color-persian-red-950); }
-.text-persian-red-950 { color: var(--color-persian-red-950); }
-
-/* --------------------------------------------------------- */
-
-/* ========================================================= */
-/* BACKGROUND dan FONT COLOR - PALET 4 (Merah Muda/Merah) */
-/* ========================================================= */
-.bg-colonial-white-50 { background-color: var(--color-colonial-white-50); }
-.text-colonial-white-50 { color: var(--color-colonial-white-50); }
-
-.bg-white-100 { background-color: var(--color-white-100); }
-.text-white-100 { color: var(--color-white-100); }
-
-.bg-malachite-200 { background-color: var(--color-malachite-200); }
-.text-malachite-200 { color: var(--color-malachite-200); }
-
-.bg-persian-red-300 { background-color: var(--color-persian-red-300); }
-.text-persian-red-300 { color: var(--color-persian-red-300); }
-
-.bg-persian-red-400 { background-color: var(--color-persian-red-400); }
-.text-persian-red-400 { color: var(--color-persian-red-400); }
-
-.bg-persian-red-500 { background-color: var(--color-persian-red-500); }
-.text-persian-red-500 { color: var(--color-persian-red-500); }
-
-.bg-persian-red-600 { background-color: var(--color-persian-red-600); }
-.text-persian-red-600 { color: var(--color-persian-red-600); }
-
-.bg-persian-red-700 { background-color: var(--color-persian-red-700); }
-.text-persian-red-700 { color: var(--color-persian-red-700); }
-
-.bg-persian-red-800 { background-color: var(--color-persian-red-800); }
-.text-persian-red-800 { color: var(--color-persian-red-800); }
-
-.bg-persian-red-900 { background-color: var(--color-persian-red-900); }
-.text-persian-red-900 { color: var(--color-persian-red-900); }
-
-.bg-persian-red-950 { background-color: var(--color-persian-red-950); }
 .text-persian-red-950 { color: var(--color-persian-red-950); }
