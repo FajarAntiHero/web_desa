@@ -23,8 +23,7 @@
     height: 100vh;
 }
 .visi-misi-container {
-    width: 80%;
-    height: 75%;
+    height: 70%;
     grid-template-columns: 1.5fr 1.2fr;
     grid-template-rows: 1fr 1.8fr;
     gap: 1.5rem;
@@ -60,7 +59,7 @@
 
 .program-kerja {
     grid-area: 1/2/3/3;
-    border: dotted 2px #461302;
+    border: dashed 2px #461302;
     padding: 2rem;
     border-radius: 24px;
 }
@@ -82,7 +81,6 @@
     height: 100vh;
 }
 .geology-container {
-    width: 80%;
     height: 75%;
 }
 .geology-container > p:nth-child(1) {
@@ -97,7 +95,7 @@
     width: 80%;
     border-radius: 16px;
     overflow: hidden;
-    border: dotted 2px #461302;
+    border: dashed 2px #461302;
 }
 .citizen-information {
     width: 15%;
@@ -130,7 +128,6 @@
     height: 100vh;
 }
 .news-container {
-    width: 80%;
     height: 80%;
 }
 .news-container > p:nth-child(1) {
@@ -198,7 +195,7 @@
 .news-item {
     border-radius: 16px;
     padding: 12px;
-    height: 25%;
+    height: 28%;
 }
 .news-item > div:nth-child(1) {
     width: 30%;
@@ -225,7 +222,6 @@
     height: 100vh;
 }
 .products-container {
-    width: 80%;
     height: 80%;
 }
 .products-container > p:nth-child(1) {
@@ -233,7 +229,7 @@
     margin-bottom: 2rem;
 }
 .product-card {
-    width: 280px;
+    width: 320px;
     height: 400px;
     border-radius: 24px;
     overflow: hidden;

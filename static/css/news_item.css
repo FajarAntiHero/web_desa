@@ -1,0 +1,128 @@
+.news-header {
+    height: 90vh;
+}
+.news-header-container {
+    height: 400px;
+    border-radius: 24px;
+    padding: 16px;
+}
+.news-header-img {
+    /* border: solid red 2px; */
+    width: 40%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.news-header-information {
+    width: 58%;
+}
+.news-header-title {
+    height: 25%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.news-header-title > div:nth-child(1) {
+    width: 16px;
+}
+.news-header-title > div:nth-child(2) {
+    width: calc(100% - 20px);
+    padding: 12px;
+}
+.news-header-title > div:nth-child(2) > p {
+    font-size: 20px;
+}
+.news-header-information > div:nth-child(2) {
+    height: 18%;
+}
+.news-header-short-detail {
+    height: 50%;
+}
+.news-header-release-date > div:nth-child(2),
+.news-header-writer > div:nth-child(2),
+.news-header-reader > div:nth-child(2),
+.news-header-like > div:nth-child(2) {
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin-top: 4px;
+}
+.news-header-release-date > div:nth-child(2) > div,
+.news-header-writer > div:nth-child(2) > div,
+.news-header-reader > div:nth-child(2) > div,
+.news-header-like > div:nth-child(2) > div {
+    margin-right: 8px;
+}
+.news-header-release-date {
+    width: 30%;
+}
+.news-header-writer {
+    width: 35%;
+}
+.news-header-reader {
+    width: 15%;
+}
+.news-header-like {
+    width: 15%;
+}
+.news-header-short-detail {
+    border-radius: 16px;
+    padding: 12px;
+}
+.news-header-short-detail > div:nth-child(1) {
+    border-radius: 16px;
+    border: solid 2px #461302;
+    padding: 2px 12px;
+    margin-bottom: 8px;
+}
+.news-detail {
+    padding: 3rem 0;
+    border-bottom: solid 2px #461302;
+    border-top: solid 2px #461302;
+}
+.news {
+    width: 60%;
+}
+.news-comments {
+    width: 35%;
+    height: 450px;
+    border-radius: 24px;
+}
+.news-comment-header {
+    font-size: 20px;
+    height: 10%;
+    border-bottom: solid 2px #461302;
+}
+.news-comment-container {
+    height: 78%;
+    padding: 12px;
+}
+.news-comment-send {
+    padding: 0px 12px 12px 12px;
+    height: 12%;
+}
+.news-comment-send > form {
+    border-radius: 24px;
+    padding: 6px 12px;
+    overflow: hidden;
+}
+.news-comment-send > form > input {
+    width: 88%;
+    outline: none;
+}
+.news-comment-send > form > button {
+    width: 10%;
+    border-radius: 24px;
+}
+.fa-paper-plane {
+    line-height: 0;
+}
+.comment {
+    border-radius: 0px 12px 12px 12px;
+    padding: 8px;
+    
+}
+.comment-identification {
+    font-size: 8px;
+    text-align: end;
+}
+.comment-content {
+    font-size: 12px;
+}

@@ -53,6 +53,10 @@
   --color-persian-red-950: #430C0C;
 }
 
+.container {
+    width: 1024px;
+    margin: auto;
+}
 .font-montserrat {
     font-family: "Montserrat", sans-serif;
 }
@@ -77,8 +81,14 @@
 .d-grid {
     display: grid;
 }
+.d-none {
+    display: none;
+}
 .flex-col {
     flex-direction: column;
+}
+.flex-wrap {
+    flex-wrap: wrap;
 }
 .absolute {
     position: absolute;
@@ -95,12 +105,11 @@
 .justify-evenly {
     justify-content: space-evenly;
 }
+.justify-end {
+    justify-content: end;
+}
 .items-center {
     align-items: center;
-}
-.container {
-    width: 1140px;
-    margin: auto;
 }
 .active {
     font-weight: bold;
@@ -108,8 +117,59 @@
 .font-bold {
     font-weight: bold;
 }
+.font-normal {
+    font-weight: 400;
+}
 .text-center {
     text-align: center;
+}
+.scroll-element {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all 0.8s ease;
+    will-change: opacity, transform;  
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.scroll-element.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.object-cover {
+    object-fit: cover;
+}
+
+/* ANIMATION */
+.fade-top {
+    transform: translateY(-100px);
+}
+
+.fade-top.active {
+    transform: translateY(0);
+}
+
+.fade-left {
+    transform: translateX(-100px);
+}
+
+.fade-left.active {
+    transform: translateX(0);
+}
+
+.fade-right {
+    transform: translateX(100px);
+}
+
+.fade-right.active {
+    transform: translateX(0);
+}
+
+.scale-up {
+    transform: scale(0.8);
+}
+
+.scale-up.active {
+    transform: scale(1);
 }
 
 /* --------------------------------------------------------- */
