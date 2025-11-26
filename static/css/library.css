@@ -135,6 +135,16 @@
     opacity: 1;
     transform: translateY(0);
 }
+.scroll-element-2 {
+    opacity: 0;
+    transition: all 0.8s ease;
+    will-change: opacity, transform;  
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.scroll-element-2.active {
+    opacity: 1;
+}
 .object-cover {
     object-fit: cover;
 }
@@ -170,6 +180,27 @@
 
 .scale-up.active {
     transform: scale(1);
+}
+.slide-left {
+    transform: translateX(0);
+}
+.slide-left.active {
+    animation: slideLeft 60s linear infinite;
+}
+
+@keyframes slideLeft {
+    /* 0% adalah posisi awal */
+    0% {
+        transform: translateX(0);
+    }
+    /* 100% bergeser sejauh setengah dari lebar kontainer */
+    100% {
+        /* Geser sejauh lebar konten ASLI (Card 1 + Card 2) */
+        /* Karena 2 kartu, kita geser 2 * (min-width + margin) */
+        transform: translateX(-100%); 
+        /* Atau dalam persentase, 50% dari total width kontainer yang 200% */
+        /* Namun, menggunakan calc dengan min-width lebih akurat */
+    }
 }
 
 /* --------------------------------------------------------- */

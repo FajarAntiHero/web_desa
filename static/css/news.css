@@ -105,8 +105,8 @@
     text-align: center;
 }
 .news-history {
-    border-top: solid 2px red;
-    border-bottom: solid 2px red;
+    border-top: solid 2px #461302;
+    border-bottom: solid 2px #461302;
 }
 .news-history-container {
     padding-top: 5rem;

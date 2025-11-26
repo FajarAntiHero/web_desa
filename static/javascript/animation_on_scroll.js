@@ -31,7 +31,7 @@ function animateCounter(element) {
 
 // Fungsi untuk menjalankan scroll trigger
 function handleScrollTrigger() {
-    const elements = document.querySelectorAll('.scroll-element, .image-grid');
+    const elements = document.querySelectorAll('.scroll-element, .image-grid, .scroll-element-2');
     
     elements.forEach(element => {
         if (isInViewport(element) && !element.classList.contains('active')) {
@@ -53,16 +53,6 @@ function handleScrollTrigger() {
             }, 800); // Sesuai dengan durasi transition di CSS
         }
     });
-}
-
-
-// Fungsi untuk progress bar
-function updateProgressBar() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollPercentage = (scrollTop / scrollHeight) * 100;
-    
-    document.getElementById('progressBar').style.width = scrollPercentage + '%';
 }
 
 // Event listener untuk scroll

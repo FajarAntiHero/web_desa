@@ -204,12 +204,28 @@
         </div>
     </div>
     <div class="structure-organization w-full bg-colonial-white-200">
-        <div class="container structure-organization-container">
-
+        <div class="container structure-organization-container h-full d-flex justify-between">
+            <div class="structure-organization-text h-full d-flex flex-col justify-between">
+                <p class="font-montserrat text-colonial-white-950 font-normal scroll-element fade-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptas illum rem, ipsa tempore voluptates?</p>
+                <div>
+                    <p class="font-montserrat text-colonial-white-950 font-bold scroll-element fade-left">Fajar Maulana</p>
+                    <p class="font-montserrat text-colonial-white-950 font-normal scroll-element fade-left">Professor</p>
+                </div>
+            </div>
+            <div class="structure-organization-img h-full scroll-element fade-right">
+                <img src="assets/img/hero-page-image.jpg" alt="Struktur Organisasi Desa Sukasari" class="w-full h-full object-cover">
+            </div>
         </div>
     </div>
-    <div class="quote d-flex justify-center items-center bg-white-50">
-        <div class="container bg-colonial-white-400"></div>
+    <div class="event-history d-flex justify-center items-center bg-white-50">
+        <div class="container event-history-container scroll-element scale-up">
+            <div class="w-full h-full">
+                <div class="h-full d-flex flex-col justify-between">
+                    <p class="font-montserrat text-colonial-white-50 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur officia, tenetur nobis pariatur amet.</p>
+                    <p class="font-montserrat text-colonial-white-50 font-normal">Upacara Hari Kemerdekaan | <span class="font-bold">17 Agustus 2025</span></p>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="news bg-colonial-white-200 w-full">
         <div class="container h-full d-flex justify-center items-center">
@@ -283,7 +299,10 @@
         </div>
     </div>
     <div class="quote bg-white-50 d-flex justify-center items-center">
-        <div class="container bg-colonial-white-400"></div>
+        <div class="container quote-container bg-colonial-white-400 d-flex flex-col justify-between">
+            <p class="font-montserrat text-colonial-white-950 text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, rem. Illo praesentium quaerat amet quis!</p>
+            <p class="font-montserrat text-colonial-white-950 font-bold text-center">Fajar Maulana | Profesor</p>
+        </div>
     </div>
     <div class="products bg-colonial-white-200 w-full">
         <div class="container h-full d-flex justify-center items-center">
@@ -381,7 +400,62 @@
             </div>
         </div>
     </div>
-    <div class="gallery bg-colonial-white-400"></div>
+    <div class="gallery bg-white-50 d-flex">
+        <div class="gallery-container d-flex justify-center items-center w-fit h-full scroll-element slide-left">
+            <div class="gallery-card card h-full relative">
+                <div class="gallery-card-info w-full absolute">
+                    <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quo!</p>
+                </div>
+            </div>
+            <div class="gallery-card card h-full relative">
+                <div class="gallery-card-info w-full absolute">
+                    <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quo!</p>
+                </div>
+            </div>
+            <div class="gallery-card card h-full relative">
+                <div class="gallery-card-info w-full absolute">
+                    <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quo!</p>
+                </div>
+            </div>
+            <div class="gallery-card card h-full relative">
+                <div class="gallery-card-info w-full absolute">
+                    <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quo!</p>
+                </div>
+            </div>
+            <div class="gallery-card card h-full relative">
+                <div class="gallery-card-info w-full absolute">
+                    <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quo!</p>
+                </div>
+            </div>
+        </div>
+        <div aria-hidden class="gallery-container d-flex w-fit h-full scroll-element slide-left">
+            <div class="gallery-card card h-full relative">
+                <div class="gallery-card-info w-full absolute">
+                    <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quo!</p>
+                </div>
+            </div>
+            <div class="gallery-card card h-full relative">
+                <div class="gallery-card-info w-full absolute">
+                    <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quo!</p>
+                </div>
+            </div>
+            <div class="gallery-card card h-full relative">
+                <div class="gallery-card-info w-full absolute">
+                    <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quo!</p>
+                </div>
+            </div>
+            <div class="gallery-card card h-full relative">
+                <div class="gallery-card-info w-full absolute">
+                    <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quo!</p>
+                </div>
+            </div>
+            <div class="gallery-card card h-full relative">
+                <div class="gallery-card-info w-full absolute">
+                    <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, quo!</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="w-full">
         <div class="footer-content d-flex font-montserrat">
             <div class="footer-information h-full">
@@ -431,5 +505,6 @@
     <script src="static/javascript/nav-scrolled.js"></script>
     <script src="static/javascript/animation_on_scroll.js"></script>
     <script src="static/javascript/liquid-glass.js"></script>
+    <!-- <script src="static/javascript/gallery_card.js"></script> -->
 </body>
 </html>
