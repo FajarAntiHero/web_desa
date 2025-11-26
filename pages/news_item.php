@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Produk | Sukasari Website</title>
+    <title>Judul Berita | Sukasari Website</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,10 +15,12 @@
     <link rel="stylesheet" href="../static/css/navbar.css">
     <link rel="stylesheet" href="../static/css/liquid-glass.css">
     <link rel="stylesheet" href="../static/css/footer.css">
-    <link rel="stylesheet" href="../static/css/product.css">
+    <link rel="stylesheet" href="../static/css/news_item.css">
 
 </head>
 <body class="bg-colonial-white-50">
+
+    <!-- NAVIGATION BAR -->
     <nav id="navbar">
         <div class="container d-flex navbar-container justify-between items-center">
             <div class="nav-logo w-fit h-fit">
@@ -29,83 +31,99 @@
             </div>
             <div class="nav-list h-fit d-flex justify-between">
                 <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Beranda</a>
-                <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Berita</a>
-                <a href="/web_desa/pages/product.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Produk</a>
+                <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Berita</a>
+                <a href="/web_desa/pages/product.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Produk</a>
             </div>
             <div class="nav-action d-flex h-full justify-end items-center">
                 <a href="/web_desa/pages/contact.php" class="d-inline-block font-montserrat text-white-50 bg-colonial-white-900 font-bold">Hubungi Kami</a>
             </div>
         </div>
     </nav>
-    <div class="hero-page-product w-full relative">
-        <div class="container hero-page-product-container d-flex flex-col items-center justify-center h-full">
-            <div class="hero-page-slogan w-fit h-fit bg-colonial-white-200 scroll-element fade-top">
-                <p class="font-montserrat text-colonial-white-950 font-normal">Dukung Produk Lokal, Dukung Ekonomi Lokal</p>
+
+    <!-- HERO PAGE -->
+    <div class="news-header d-flex items-center">
+        <div class="container news-header-container bg-colonial-white-200 d-flex justify-between h-fit">
+            <div class="news-header-img h-full">
+                <img src="../assets/img/hero-page-image.jpg" alt="" class="w-full h-full object-cover">
             </div>
-            <p class="font-montserrat text-center text-colonial-white-950 scroll-element scale-up font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste autem alias blanditiis sequi voluptas molestiae!</p>
-            <a href="#products" class="font-montserrat font-bold d-inline-block hero-page-atc w-fit h-fit text-colonial-white-950 scroll-element scale-up">Jelajahi Produk Lokal Sukasari</a>
-        </div>
-        <i class="fa-solid fa-cart-arrow-down absolute text-colonial-white-400 scroll-element fade-left"></i>
-        <i class="fa-solid fa-dollar-sign absolute text-colonial-white-400 scroll-element fade-right"></i>
-        <i class="fa-solid fa-burger absolute text-colonial-white-400 scroll-element fade-left"></i>
-        <i class="fa-solid fa-beer-mug-empty absolute text-colonial-white-400 scroll-element fade-right"></i>
-        <i class="fa-solid fa-heart absolute text-colonial-white-400 scroll-element fade-left"></i>
-        <i class="fa-solid fa-apple-whole absolute text-colonial-white-400 scroll-element fade-right"></i>
-    </div>
-    <div class="product-search w-full h-fit d-flex justify-center items-center bg-colonial-white-100" id="products">
-        <div class="container product-search-container">
-            <p class="font-bold font-montserrat text-colonial-white-950 scroll-element fade-left">Temukan Produk Lokal Sukasari</p>
-            <div class="search-input">
-                <form action="" class="d-flex w-full justify-between bg-colonial-white-200 scroll-element fade-left">
-                    <div class="d-flex justify-center items-center">
-                        <i class="fa-solid fa-magnifying-glass text-colonial-white-950"></i>
+            <div class="news-header-information d-flex flex-col justify-between">
+                <div class="news-header-title bg-white-50 d-flex">
+                    <div class="bg-colonial-white-400 h-full"></div>
+                    <div class="h-full">
+                        <p>Judul Berita</p>
                     </div>
-                    <input type="text" id="search-input" class="font-montserrat text-colonial-white-950" placeholder="Cilok Seribuan">
-                    <button class="font-bold font-montserrat text-colonial-white-950 bg-colonial-white-400">Cari</button>
-                </form>
-                <p class="font-bold font-montserrat text-colonial-white-950 d-none">Ditemukan 1 Produk dengan nama <span class="text-colonial-white-400">"Nama Produk"</span></p>
-            </div>
-            <div class="product-card-container d-flex flex-wrap justify-evenly">
-                <div class="product-card-item d-flex flex-col justify-between bg-white-50 scroll-element scale-up">
-                    <div class="product-card-content">
-                        <div class="product-card-img">
-                            <img src="../assets/img/hero-page-image.jpg" alt="" class="w-full h-full">
-                        </div>
-                        <div class="product-card-text">
-                            <p class="font-bold font-montserrat text-colonial-white-950">Nama Produk</p>
-                            <p class="text-colonial-white-900 font-montserrat font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro minima mollitia, odit blanditiis soluta temporibus.</p>
+                </div>
+                <div class="d-flex justify-between">
+                    <div class="news-header-release-date">
+                        <p>Tanggal Rilis</p>
+                        <div class="bg-white-50 d-flex">
+                            <div><i class="fa-regular fa-calendar"></i></div>
+                            <p>20 Maret 2025</p>
                         </div>
                     </div>
-                    <a href="/web_desa/pages/product_item.php" class="product-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
-                        Lihat Produk
-                    </a>
+                    <div class="news-header-writer">
+                        <p>Penulis</p>
+                        <div class="bg-white-50 d-flex">
+                            <div><i class="fa-solid fa-pen-fancy"></i></div>
+                            <p>Fajar Maulana</p>
+                        </div>
+                    </div>
+                    <div class="news-header-reader">
+                        <p>Pembaca</p>
+                        <div class="bg-white-50 d-flex">
+                            <div><i class="fa-solid fa-eye"></i></div>
+                            <p>245</p>
+                        </div>
+                    </div>
+                    <div class="news-header-like">
+                        <p>Suka</p>
+                        <div class="bg-white-50 d-flex">
+                            <div><i class="fa-regular fa-thumbs-up"></i></div>
+                            <p>23</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="product-information bg-white-50 d-flex items-center">
-        <div class="container d-grid product-information-container">
-            <div class="product-information-quote bg-colonial-white-200 d-flex flex-col justify-between scroll-element fade-left">
-                <p class="font-montserrat text-colonial-white-950 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quaerat maxime nesciunt quis corrupti impedit.</p>
-                <div>
-                    <p class="font-montserrat font-bold text-colonial-white-950">Fajar Maulana</p>
-                    <p class="font-montserrat text-colonial-white-950 font-normal">Professor</p>
-                </div>
-            </div>
-            <div class="product-information-data bg-colonial-white-200">
-                <p></p>
-                <div>
+                <div class="news-header-short-detail bg-white-50">
+                    <div class="w-fit">
+                        <p>Sinopsis Berita</p>
+                    </div>
                     <div>
-                        <p></p>
-                        <p></p>
-                        <p></p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, numquam veniam aliquid suscipit id voluptates.</p>
                     </div>
                 </div>
-                <p></p>
             </div>
-            <div class="product-information-item bg-colonial-white-200"></div>
         </div>
     </div>
+
+    <!-- NEWS DETAIL -->
+    <div class="news-detail w-full h-fit bg-white-50">
+        <div class="container news-detail-container d-flex justify-between">
+            <div class="news">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi veritatis numquam ipsa in cum maiores eos nostrum dolore cumque explicabo ex sed vitae et, repudiandae iste fugit praesentium odio magnam! Possimus nobis laborum cumque molestiae nemo. Earum consequuntur dolore incidunt laborum similique quam alias expedita quas rerum harum! Minus, facilis.</p>
+            </div>
+            <div class="news-comments bg-colonial-white-200">
+                <div class="news-comment-header w-full d-flex justify-center items-center">
+                    <p class="font-montserrat font-bold text-colonial-white-950">Komentar</p>
+                </div>
+                <div class="news-comment-container w-full">
+                    <div class="w-full h-full">
+                        <div class="comment w-fit h-fit bg-colonial-white-50">
+                            <p class="comment-identification font-montserrat text-white-500">Anonymous | 12.30</p>
+                            <p class="comment-content font-montserrat text-colonial-white-950">kereen</p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="news-comment-send w-full">
+                    <form action="" class="w-full h-full bg-white-50 d-flex justify-between">
+                        <input type="text" placeholder="tambahkan komentar" class="font-montserrat h-full text-colonial-white-950">
+                        <button class="bg-colonial-white-200 h-full d-flex justify-center items-center"><i class="fa-regular fa-paper-plane text-colonial-white-950"></i></button>
+                    </form>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
     <footer class="w-full">
         <div class="footer-content d-flex font-montserrat">
             <div class="footer-information h-full">
