@@ -50,45 +50,45 @@
                 <div class="news-header-title bg-white-50 d-flex">
                     <div class="bg-colonial-white-400 h-full"></div>
                     <div class="h-full">
-                        <p>Judul Berita</p>
+                        <p class="font-montserrat font-bold text-colonial-white-950">Judul Berita</p>
                     </div>
                 </div>
                 <div class="d-flex justify-between">
                     <div class="news-header-release-date">
-                        <p>Tanggal Rilis</p>
+                        <p class="font-montserrat text-colonial-white-950 font-bold">Tanggal Rilis</p>
                         <div class="bg-white-50 d-flex">
-                            <div><i class="fa-regular fa-calendar"></i></div>
-                            <p>20 Maret 2025</p>
+                            <div><i class="fa-regular fa-calendar text-colonial-white-950"></i></div>
+                            <p class="font-montserrat text-colonial-white-950">20 Maret 2025</p>
                         </div>
                     </div>
                     <div class="news-header-writer">
-                        <p>Penulis</p>
+                        <p class="font-montserrat text-colonial-white-950 font-bold">Penulis</p>
                         <div class="bg-white-50 d-flex">
-                            <div><i class="fa-solid fa-pen-fancy"></i></div>
-                            <p>Fajar Maulana</p>
+                            <div><i class="fa-solid fa-pen-fancy text-colonial-white-950"></i></div>
+                            <p class="font-montserrat text-colonial-white-950">Fajar Maulana</p>
                         </div>
                     </div>
                     <div class="news-header-reader">
-                        <p>Pembaca</p>
+                        <p class="font-montserrat text-colonial-white-950 font-bold">Pembaca</p>
                         <div class="bg-white-50 d-flex">
-                            <div><i class="fa-solid fa-eye"></i></div>
-                            <p>245</p>
+                            <div><i class="fa-solid fa-eye text-colonial-white-950"></i></div>
+                            <p class="font-montserrat text-colonial-white-950">245</p>
                         </div>
                     </div>
                     <div class="news-header-like">
-                        <p>Suka</p>
+                        <p class="font-montserrat text-colonial-white-950 font-bold">Suka</p>
                         <div class="bg-white-50 d-flex">
-                            <div><i class="fa-regular fa-thumbs-up"></i></div>
-                            <p>23</p>
+                            <div><i class="fa-regular fa-thumbs-up text-colonial-white-950"></i></div>
+                            <p class="font-montserrat text-colonial-white-950">23</p>
                         </div>
                     </div>
                 </div>
                 <div class="news-header-short-detail bg-white-50">
                     <div class="w-fit">
-                        <p>Sinopsis Berita</p>
+                        <p class="font-montserrat text-colonial-white-950">Sinopsis Berita</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, numquam veniam aliquid suscipit id voluptates.</p>
+                        <p class="font-montserrat text-colonial-white-950">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, numquam veniam aliquid suscipit id voluptates.</p>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,8 @@
     <div class="news-detail w-full h-fit bg-white-50">
         <div class="container news-detail-container d-flex justify-between">
             <div class="news">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi veritatis numquam ipsa in cum maiores eos nostrum dolore cumque explicabo ex sed vitae et, repudiandae iste fugit praesentium odio magnam! Possimus nobis laborum cumque molestiae nemo. Earum consequuntur dolore incidunt laborum similique quam alias expedita quas rerum harum! Minus, facilis.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi veritatis numquam ipsa in cum maiores eos nostrum dolore cumque explicabo ex sed vitae et, repudiandae iste fugit praesentium 
+                    odio magnam! Possimus nobis laborum cumque molestiae nemo. Earum consequuntur dolore incidunt laborum similique quam alias expedita quas rerum harum! Minus, facilis.</p>
             </div>
             <div class="news-comments bg-colonial-white-200">
                 <div class="news-comment-header w-full d-flex justify-center items-center">
