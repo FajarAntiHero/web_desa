@@ -1,3 +1,36 @@
+<?php
+    require '../model/news_model.php';
+    require '../utility/utility.php';
+    
+    $getData = $koneksi;
+    // var_dump($getData);
+    $allNews = getAllNews();
+    // var_dump($allNews);
+
+    $dataPerPage = 8;
+    $countData = count($allNews);
+    $countPages = ceil($countData / $dataPerPage);
+    $activePage = (isset($_GET['page'])) ? $_GET['page'] : 1;
+    $startData = ($dataPerPage * $activePage) - $dataPerPage;
+    $paginatedNews = getNewsPerPage($startData, $dataPerPage);
+
+    if (isset($_GET['news-title-search'])) {
+        $searchTitle = $_GET['news-title-search'];
+        // Lakukan query pencarian berdasarkan judul berita
+        $query = "SELECT * FROM news WHERE news_title LIKE '%$searchTitle%'";
+        $result = $getData->query($query);
+        $getSearchNews = [];
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $getSearchNews[] = $row;
+            }
+        }
+    }
+    else {
+        $searchTitle = [];
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="id-ID">
 <head>
@@ -53,66 +86,85 @@
             <div class="news-event bg-colonial-white-200 scroll-element fade-right"></div>
         </div>
     </header>
-    <div class="news-search w-full h-fit d-flex justify-center items-center bg-white-50">
+    <div class="news-search w-full h-fit d-flex justify-center items-center bg-white-50" id='news-search'>
         <div class="container news-search-container">
             <p class="font-bold font-montserrat text-colonial-white-950 scroll-element fade-left">Temukan Berita Desa</p>
             <div class="search-input">
-                <form action="" class="d-flex w-full justify-between bg-colonial-white-200 scroll-element fade-left">
+                <form action="#news-search" method="GET" class="d-flex w-full justify-between bg-colonial-white-200 scroll-element fade-left">
                     <div class="d-flex justify-center items-center">
                         <i class="fa-solid fa-magnifying-glass text-colonial-white-950"></i>
                     </div>
-                    <input type="text" id="search-input" class="font-montserrat text-colonial-white-950" placeholder="Pembangunan Posyandu">
+                    <input type="text" id="search-input" class="font-montserrat text-colonial-white-950" placeholder="Pembangunan Posyandu" name="news-title-search" required>
                     <button class="font-bold font-montserrat text-colonial-white-950 bg-colonial-white-400">Cari</button>
                 </form>
                 <p class="font-bold font-montserrat text-colonial-white-950 d-none">Ditemukan 4 berita dengan judul <span class="text-colonial-white-400">"Judul Berita"</span></p>
             </div>
             <div class="news-card-container d-flex flex-wrap justify-evenly">
-                <div class="news-card-item d-flex flex-col justify-between bg-white-50 scroll-element scale-up">
-                    <div class="news-card-content">
-                        <div class="news-card-img">
-                            <img src="../assets/img/hero-page-image.jpg" alt="" class="w-full h-full">
+                <?php if (isset($getSearchNews)): ?>
+                    <?php foreach ($getSearchNews as $newsItem): ?>
+                        <?php
+                            $newsItem['news_title'] = potongTeks($newsItem['news_title'], 50);
+                            $newsItem['news_text'] = potongTeks($newsItem['news_text'], 70);
+                        ?>
+                        <div class="news-card-item d-flex flex-col justify-between bg-white-50 scroll-element scale-up">
+                            <div class="news-card-content">
+                                <div class="news-card-img">
+                                    <img src="../assets/img/hero-page-image.jpg" alt="" class="w-full h-full">
+                                </div>
+                                <div class="news-card-text">
+                                    <p class="font-bold font-montserrat text-colonial-white-950"><?= $newsItem['news_title'] ?></p>
+                                    <p class="text-colonial-white-900 font-montserrat font-normal"><?= $newsItem['news_text'] ?></p>
+                                </div>
+                            </div>
+                            <a href="/web_desa/pages/news_item.php" class="news-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
+                                Baca Berita
+                            </a>
                         </div>
-                        <div class="news-card-text">
-                            <p class="font-bold font-montserrat text-colonial-white-950">Lorem ipsum dolor sit.</p>
-                            <p class="text-colonial-white-900 font-montserrat font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro minima mollitia, odit blanditiis soluta temporibus.</p>
-                        </div>
-                    </div>
-                    <a href="/web_desa/pages/news_item.php" class="news-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
-                        Baca Berita
-                    </a>
-                </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
-    <div class="news-history h-fit">
+    <div class="news-history h-fit" id="news-history">
         <div class="container news-history-container h-fit">
             <div class="news-history-header">
                 <p class="font-montserrat font-bold text-colonial-white-950">Arsip Berita Desa</p>
                 <div class="news-history-years d-flex">
                     <a href="" class="d-inline-block w-fit h-fit font-bold font-montserrat text-persian-red-500 years-active">2025</a>
                 </div>
-                <p class="news-result-information font-montserrat font-bold text-colonial-white-950">Ditemukan 17 berita pada tahun 2025 | Ditampilkan 8 dari 17 berita</p>
+                <p class="news-result-information font-montserrat font-bold text-colonial-white-950">Ditemukan 17 berita pada tahun 2025 | Ditampilkan <?= count($paginatedNews)?> dari <?= count($allNews) ?> berita</p>
             </div>
-            <div class="news-history-items d-flex">
-                <div class="news-card-item d-flex flex-col justify-between bg-white-50 scroll-element scale-up">
-                    <div class="news-card-content">
-                        <div class="news-card-img">
-                            <img src="../assets/img/hero-page-image.jpg" alt="" class="w-full h-full">
+            <div class="news-history-items d-flex flex-wrap justify-evenly">
+                <?php foreach ($paginatedNews as $newsItem): ?>
+                    <?php
+                        $newsItem['news_title'] = potongTeks($newsItem['news_title'], 50);
+                        $newsItem['news_text'] = potongTeks($newsItem['news_text'], 70);
+                    ?>
+                    <div class="news-card-item d-flex flex-col justify-between bg-white-50 scroll-element scale-up">
+                        <div class="news-card-content">
+                            <div class="news-card-img">
+                                <img src="../assets/img/hero-page-image.jpg" alt="" class="w-full h-full">
+                            </div>
+                            <div class="news-card-text">
+                                <p class="font-bold font-montserrat text-colonial-white-950"><?= $newsItem['news_title'] ?></p>
+                                <p class="text-colonial-white-900 font-montserrat font-normal"><?= $newsItem['news_text'] ?></p>
+                            </div>
                         </div>
-                        <div class="news-card-text">
-                            <p class="font-bold font-montserrat text-colonial-white-950">Lorem ipsum dolor sit.</p>
-                            <p class="text-colonial-white-900 font-montserrat font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro minima mollitia, odit blanditiis soluta temporibus.</p>
-                        </div>
+                        <a href="" class="news-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
+                            Baca Berita
+                        </a>
                     </div>
-                    <a href="" class="news-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
-                        Baca Berita
-                    </a>
-                </div>
+                <?php endforeach; ?>
+
             </div>
             <div class="pagination d-flex justify-center w-full h-fit">
-                <a href="" class="font-montserrat font-bold d-inline-block text-colonial-white-950 bg-colonial-white-200 h-fit">1</a>
-                <a href="" class="font-montserrat font-bold d-inline-block text-colonial-white-950 bg-colonial-white-200 h-fit">2</a>
-                <a href="" class="font-montserrat font-bold d-inline-block text-colonial-white-950 bg-colonial-white-200 h-fit">3</a>
+                <?php for($i = 1; $i <= $countPages; $i++): ?>
+                    <?php if($i == $activePage) : ?>
+                        <a href="?page=<?= $i ?>#news-history" class="font-montserrat font-bold d-inline-block text-colonial-white-950 bg-colonial-white-200 h-fit <?= ($i == $activePage) ? 'pagination-active' : '' ?>"><?= $i ?></a>
+                    <?php else : ?>
+                        <a href="?page=<?= $i ?>#news-history" class="font-montserrat font-bold d-inline-block text-colonial-white-950 bg-colonial-white-200 h-fit"><?= $i ?></a>
+                    <?php endif; ?>
+                <?php endfor; ?>
             </div>
         </div>
     </div>
@@ -166,4 +218,4 @@
     <script src="../static/javascript/animation_on_scroll.js"></script>
     <script src="../static/javascript/liquid-glass.js"></script>
 </body>
-</html>
+</html> 
