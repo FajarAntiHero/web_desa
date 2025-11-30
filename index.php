@@ -124,7 +124,7 @@
     <header class="hero-page">
         <div class="container h-full d-flex flex-col justify-center items-center">
             <div class="hero-page-text w-full h-fit">
-                <p class="font-montserrat font-bold text-colonial-white-800 text-center scroll-element fade-top">Selamat Datang</p>
+                <p class="font-montserrat font-bold text-colonial-white-800 text-center scroll-element fade-top">Selamat Datang di Sukasari Website</p>
                 <p class="font-montserrat text-colonial-white-950 text-center font-normal scroll-element fade-top">Publikasi Informasi Bermanfaat Untuk Warga Desa Sukasari</p>
             </div>
             <div class="hero-page-img w-full bg-colonial-white-300 scroll-element scale-up">
@@ -137,14 +137,14 @@
             <div class="visi-misi-container w-full d-grid">
                 <div class="bg-colonial-white-400 visi d-flex flex-col justify-between scroll-element fade-left">
                     <p class="font-bold font-montserrat text-white-50">Visi</p>
-                    <p class="font-montserrat text-white-50">Terwujudnya Pemerintahan Desa yang Baik dan Pelayanan Prima untuk Masyarakat</p>
+                    <p class="font-montserrat text-white-50 font-normal">Terwujudnya Pemerintahan Desa yang Baik dan Pelayanan Prima untuk Masyarakat</p>
                 </div>
                 <div class="bg-colonial-white-100 misi scroll-element fade-left">
                     <div class="bg-colonial-white-400">
                         <p class="font-bold font-montserrat text-white-50">Misi</p>
                     </div>
                     <div>
-                        <ol class="font-montserrat text-colonial-white-950">
+                        <ol class="font-montserrat text-colonial-white-950 font-normal">
                             <li>Meningkatkan kemampuan dan kinerja aparatur pemerintah desa</li>
                             <li>Melaksanakan pemerintahan desa secara partisipatif dan demokratis</li>
                             <li>Mewujudkan transparansi dan akuntabilitas dalam pengelolaan desa</li>
@@ -154,7 +154,7 @@
                 </div>
                 <div class="bg-colonial-white-50 scroll-element fade-right program-kerja">
                     <p class="font-bold font-montserrat text-colonial-white-950">Program Kerja</p>
-                    <ol class="font-montserrat text-colonial-white-950">
+                    <ol class="font-montserrat text-colonial-white-950 font-normal">
                         <li>Memaksimalkan sistem Kerja Aparatur Pemerintah Desa sesuai tugas, fungsi dan wewenang.</li>
                         <li>Menyelenggarakan Program Desa Berdasarkan Musyawarah Yang termuat dalam RPJM Desa, RKPDes dan APB Desa.</li>
                         <li>Melaksanakan Program Desa dengan transparan terbuka dan bertanggung jawab.</li>
@@ -237,7 +237,7 @@
                         <div class="news-hot-topic-text d-flex flex-col justify-between">
                             <div class="w-full hot-topic-header">
                                 <div class="w-fit h-fit liquid-glass">
-                                    <p class="font-bold font-montserrat">
+                                    <p class="font-bold font-montserrat text-colonial-white-950">
                                         Berita Populer
                                     </p>
                                 </div>
@@ -246,7 +246,7 @@
                             <div class="hot-topic-information liquid-glass d-flex justify-between">
                                 <div class="h-full">
                                     <p class="font-bold font-montserrat">Pelatihan Kewirausahaan untuk Pemuda</p>
-                                    <p class="font-montserrat text-white-200">Meliputi cara memulai usaha, manajemen keuangan, dan strategi pemasaran produk.</p>
+                                    <p class="font-montserrat text-white-200 font-normal">Meliputi cara memulai usaha, manajemen keuangan, dan strategi pemasaran produk.</p>
                                 </div>
                                 <div class="h-full">
                                     <div class="d-flex flex-col justify-center items-center">
@@ -268,7 +268,7 @@
                                 </div>
                                 <div>
                                     <p class="font-bold font-montserrat text-colonial-white-950">Panen Raya Padi Hasil Melimpah</p>
-                                    <p class="font-montserrat text-white-950">Panen yang meningkat dibanding tahun lalu berkat cuaca mendukung dan bantuan pupuk dari desa.</p>
+                                    <p class="font-montserrat text-white-950 font-normal">Panen yang meningkat dibanding tahun lalu berkat cuaca mendukung dan bantuan pupuk dari desa.</p>
                                 </div>
                             </a>
                             <a href="" class="d-flex news-item bg-colonial-white-50 justify-between scroll-element scale-up">
@@ -277,7 +277,7 @@
                                 </div>
                                 <div>
                                     <p class="font-bold font-montserrat text-colonial-white-950">Gotong Royong Bersihkan Lingkungan Desa</p>
-                                    <p class="font-montserrat text-white-950">Ratusan warga dari berbagai dusun turun bersama membersihkan jalan, selokan, dan fasilitas umum.</p>
+                                    <p class="font-montserrat text-white-950 font-normal">Ratusan warga dari berbagai dusun turun bersama membersihkan jalan, selokan, dan fasilitas umum.</p>
                                 </div>
                             </a>
                             <a href="" class="d-flex news-item bg-colonial-white-50 justify-between scroll-element scale-up">
@@ -286,7 +286,7 @@
                                 </div>
                                 <div>
                                     <p class="font-bold font-montserrat text-colonial-white-950">Festival Budaya Desa Sukasari</p>
-                                    <p class="font-montserrat text-white-950">Festival budaya menampilkan tarian tradisional, musik daerah, dan pameran hasil karya warga.</p>
+                                    <p class="font-montserrat text-white-950 font-normal">Festival budaya menampilkan tarian tradisional, musik daerah, dan pameran hasil karya warga.</p>
                                 </div>
                             </a>
                             <a href="" class="d-flex justify-center items-center bg-colonial-white-50 font-bold font-montserrat text-colonial-white-950 news-cta scroll-element scale-up">
@@ -320,7 +320,7 @@
                             <div class="product-detail d-flex flex-col justify-between bg-colonial-white-50">
                                 <div class="product-detail-text">
                                     <p class="font-bold font-montserrat text-colonial-white-500">Beras Organik</p>
-                                    <p class="font-montserrat text-colonial-white-950">
+                                    <p class="font-montserrat text-colonial-white-950 font-normal">
                                         Ditanam tanpa menggunakan pestisida kimia, sehingga aman dan sehat untuk dikonsumsi.
                                     </p>
                                 </div>
@@ -349,13 +349,13 @@
                             <div class="product-detail d-flex flex-col justify-between bg-colonial-white-50">
                                 <div class="product-detail-text">
                                     <p class="font-bold font-montserrat text-colonial-white-500">Keripik Singkong Renyah</p>
-                                    <p class="font-montserrat text-colonial-white-950">
+                                    <p class="font-montserrat text-colonial-white-950 font-normal">
                                         Keripik singkong renyah dengan berbagai varian rasa: original, balado, keju, dan bawang.
                                     </p>
                                 </div>
                                 <div class="product-detail-price d-flex justify-between">
                                     <div class="w-fit h-fit">
-                                        <p class="font-montserrat text-colonial-white-950">Harga</p>
+                                        <p class="font-montserrat text-colonial-white-950 font-normal">Harga</p>
                                         <p class="font-bold font-montserrat text-colonial-white-950">Rp. 10.000</p>
                                     </div>
                                     <div>
@@ -378,13 +378,13 @@
                             <div class="product-detail d-flex flex-col justify-between bg-colonial-white-50">
                                 <div class="product-detail-text">
                                     <p class="font-bold font-montserrat text-colonial-white-500">Madu Hutan Asli</p>
-                                    <p class="font-montserrat text-colonial-white-950">
+                                    <p class="font-montserrat text-colonial-white-950 font-normal">
                                         Madu murni 100% hasil panen dari hutan sekitar Desa Sukasari. Madu ini diambil langsung dari sarang lebah liar yang hidup di hutan alami, sehingga kualitasnya terjamin keasliannya.
                                     </p>
                                 </div>
                                 <div class="product-detail-price d-flex justify-between">
                                     <div class="w-fit h-fit">
-                                        <p class="font-montserrat text-colonial-white-950">Harga</p>
+                                        <p class="font-montserrat text-colonial-white-950 font-normal">Harga</p>
                                         <p class="font-bold font-montserrat text-colonial-white-950">Rp. 50.000</p>
                                     </div>
                                     <div>
@@ -465,12 +465,12 @@
                         <p class="font-bold text-colonial-white-950">Suweb</p>
                     </div>
                     <div class="footer-information-detail">
-                        <p class="text-colonial-white-950">Website resmi Desa Sukasari menyajikan informasi terkini seputar pemerintahan, pembangunan, kegiatan masyarakat, dan potensi desa. Kami hadir untuk memberikan pelayanan informasi yang transparan dan mudah diakses oleh seluruh masyarakat.</p>
+                        <p class="text-colonial-white-950">Website resmi Desa Sukasari menyajikan informasi terkini seputar pemerintahan, pembangunan, kegiatan masyarakat, dan potensi desa.</p>
                     </div>
                 </div>
                 <div class="footer-detail bg-colonial-white-100 scroll-element scale-up">
                     <p class="text-colonial-white-950 font-bold">Alamat Kantor Desa</p>
-                    <p class="text-colonial-white-950">
+                    <p class="text-colonial-white-950 font-normal">
                         Jl. Raya Serang Jl. Raya Serang Cibarusah 17330 Kabupaten Bekasi Jawa Barat 
                     </p>
                 </div>

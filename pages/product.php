@@ -1,3 +1,24 @@
+<?php
+    require '../model/product_model.php';
+    require_once '../utility/utility.php';
+    $koneksi = $getData->getConnection();
+
+    if (isset($_GET['product-title-search'])) {
+        $searchTitle = $_GET['product-title-search'];
+        // Lakukan query pencarian berdasarkan judul berita
+        $query = "SELECT * FROM product_table WHERE product_title LIKE '%$searchTitle%'";
+        $result = $koneksi->query($query);
+        $getSearchNews = [];
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $getSearchNews[] = $row;
+            }
+        }
+    }
+    else {
+        $searchTitle = [];
+    }
+?>
 <!DOCTYPE html>
 <html lang="id-ID">
 <head>
@@ -56,30 +77,38 @@
         <div class="container product-search-container">
             <p class="font-bold font-montserrat text-colonial-white-950 scroll-element fade-left">Temukan Produk Lokal Sukasari</p>
             <div class="search-input">
-                <form action="" class="d-flex w-full justify-between bg-colonial-white-200 scroll-element fade-left">
+                <form action="#products" method="GET" class="d-flex w-full justify-between bg-colonial-white-200 scroll-element fade-left">
                     <div class="d-flex justify-center items-center">
                         <i class="fa-solid fa-magnifying-glass text-colonial-white-950"></i>
                     </div>
-                    <input type="text" id="search-input" class="font-montserrat text-colonial-white-950" placeholder="Cilok Seribuan">
+                    <input type="text" id="search-input" name='product-title-search' class="font-montserrat text-colonial-white-950" placeholder="Cilok Seribuan" required>
                     <button class="font-bold font-montserrat text-colonial-white-950 bg-colonial-white-400">Cari</button>
                 </form>
                 <p class="font-bold font-montserrat text-colonial-white-950 d-none">Ditemukan 1 Produk dengan nama <span class="text-colonial-white-400">"Nama Produk"</span></p>
             </div>
             <div class="product-card-container d-flex flex-wrap justify-evenly">
-                <div class="product-card-item d-flex flex-col justify-between bg-white-50 scroll-element scale-up">
-                    <div class="product-card-content">
-                        <div class="product-card-img">
-                            <img src="../assets/img/hero-page-image.jpg" alt="" class="w-full h-full">
+                <?php if (isset($getSearchNews)): ?>
+                    <?php foreach ($getSearchNews as $productItem): ?>
+                        <?php
+                            $productItem['product_title'] = potongTeks($productItem['product_title'], 50);
+                            $productItem['product_description'] = potongTeks($productItem['product_description'], 70);
+                        ?>
+                        <div class="product-card-item d-flex flex-col justify-between bg-white-50 scroll-element scale-up">
+                            <div class="product-card-content">
+                                <div class="product-card-img">
+                                    <img src="../assets/img/hero-page-image.jpg" alt="" class="w-full h-full">
+                                </div>
+                                <div class="product-card-text">
+                                    <p class="font-bold font-montserrat text-colonial-white-950"><?= $productItem['product_title'] ?></p>
+                                    <p class="text-colonial-white-900 font-montserrat font-normal"><?= $productItem['product_description'] ?></p>
+                                </div>
+                            </div>
+                            <a href="/web_desa/pages/product_item.php" class="product-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
+                                Lihat Produk
+                            </a>
                         </div>
-                        <div class="product-card-text">
-                            <p class="font-bold font-montserrat text-colonial-white-950">Nama Produk</p>
-                            <p class="text-colonial-white-900 font-montserrat font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro minima mollitia, odit blanditiis soluta temporibus.</p>
-                        </div>
-                    </div>
-                    <a href="/web_desa/pages/product_item.php" class="product-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
-                        Lihat Produk
-                    </a>
-                </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
         </div>
     </div>
