@@ -5,7 +5,8 @@ class Database {
     private $user = "root";
     private $password = "";
     private $database = "db_contoh"; 
-    private $sql_file = "setup_tabel.sql"; 
+    private $sql_file = "setup_tabel.sql";
+    private $sql_seed = "";
 
     public $koneksi;
 
@@ -14,7 +15,7 @@ class Database {
         $this->user = $user;
         $this->password = $password;
         $this->database = $database;
-        $this->sql_file = $sql_file;
+        $this->sql_file = $sql_file;          
         
         // Flag untuk menandai apakah database baru saja dibuat
         $db_baru_dibuat = false;
@@ -31,7 +32,7 @@ class Database {
 
         if ($result && $result->num_rows == 0) {
             // Database belum ada, maka buat database
-            echo "Database **'$this->database'** tidak ditemukan. Mencoba membuat database...<br>";
+            // echo "Database **'$this->database'** tidak ditemukan. Mencoba membuat database...<br>";
             $sql_create_db = "CREATE DATABASE $this->database";
             
             if ($server_koneksi->query($sql_create_db) === TRUE) {
@@ -43,7 +44,7 @@ class Database {
             }
         }
         
-        $server_koneksi->close();
+        // $server_koneksi->close();
 
         // 3. Buat koneksi final ke database spesifik
         $this->koneksi = new mysqli($this->host, $this->user, $this->password, $this->database);
@@ -75,10 +76,11 @@ class Database {
         }
 
         $sql_content = file_get_contents($this->sql_file);
+        // echo $sql_content;
         
         if ($this->koneksi->multi_query($sql_content)) {
             // echo "Struktur tabel awal berhasil di-setup dari file **'$this->sql_file'**.<br>";
-            
+
             // Pembersihan hasil multi_query
             do {
                 if ($result = $this->koneksi->store_result()) {
