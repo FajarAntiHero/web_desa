@@ -50,45 +50,45 @@
                 <div class="product-header-title bg-white-50 d-flex">
                     <div class="bg-colonial-white-400 h-full"></div>
                     <div class="h-full">
-                        <p>Nama Produk</p>
+                        <p class="text-colonial-white-950 font-bold font-montserrat">Nama Produk</p>
                     </div>
                 </div>
                 <div class="d-flex justify-between">
                     <div class="product-price">
-                        <p>Harga</p>
+                        <p class="text-colonial-white-950 font-bold font-montserrat">Harga</p>
                         <div class="bg-white-50 d-flex">
-                            <div><i class="fa-regular fa-calendar"></i></div>
-                            <p>Rp. 3.000</p>
+                            <div><i class="fa-regular fa-calendar text-colonial-white-950"></i></div>
+                            <p class="font-montserrat text-colonial-white-950">Rp. 3.000</p>
                         </div>
                     </div>
                     <div class="product-shop">
-                        <p>Toko</p>
+                        <p class="text-colonial-white-950 font-bold  font-montserrat">Toko</p>
                         <div class="bg-white-50 d-flex">
-                            <div><i class="fa-solid fa-pen-fancy"></i></div>
-                            <p>Warung A</p>
+                            <div><i class="fa-solid fa-pen-fancy text-colonial-white-950"></i></div>
+                            <p class="font-montserrat text-colonial-white-950">Warung A</p>
                         </div>
                     </div>
                     <div class="product-header-reader">
-                        <p>Pelihat</p>
+                        <p class="text-colonial-white-950 font-bold  font-montserrat">Pelihat</p>
                         <div class="bg-white-50 d-flex">
-                            <div><i class="fa-solid fa-eye"></i></div>
-                            <p>245</p>
+                            <div><i class="fa-solid fa-eye text-colonial-white-950"></i></div>
+                            <p class="font-montserrat text-colonial-white-950">245</p>
                         </div>
                     </div>
                     <div class="product-header-like">
-                        <p>Suka</p>
+                        <p class="text-colonial-white-950 font-bold  font-montserrat">Suka</p>
                         <div class="bg-white-50 d-flex">
-                            <div><i class="fa-regular fa-thumbs-up"></i></div>
-                            <p>23</p>
+                            <div><i class="fa-regular fa-thumbs-up text-colonial-white-950"></i></div>
+                            <p class="font-montserrat text-colonial-white-950">23</p>
                         </div>
                     </div>
                 </div>
                 <div class="product-header-short-detail bg-white-50">
                     <div class="w-fit">
-                        <p>Deskripsi Singkat</p>
+                        <p class= "font-montserrat text-colonial-white-950">Deskripsi Singkat</p>
                     </div>
                     <div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, numquam veniam aliquid suscipit id voluptates.</p>
+                        <p class= "font-montserrat text-colonial-white-950">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, numquam veniam aliquid suscipit id voluptates.</p>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
     <div class="product-detail w-full h-fit bg-white-50">
         <div class="container product-detail-container d-flex justify-between">
             <div class="product">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi veritatis numquam ipsa in cum maiores eos nostrum dolore cumque explicabo ex sed vitae et, repudiandae iste fugit praesentium odio magnam! Possimus nobis laborum cumque molestiae nemo. Earum consequuntur dolore incidunt laborum similique quam alias expedita quas rerum harum! Minus, facilis.</p>
+                <p class="font-montserrat text-colonial-white-950">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi veritatis numquam ipsa in cum maiores eos nostrum dolore cumque explicabo ex sed vitae et, repudiandae iste fugit praesentium odio magnam! Possimus nobis laborum cumque molestiae nemo. Earum consequuntur dolore incidunt laborum similique quam alias expedita quas rerum harum! Minus, facilis.</p>
             </div>
             <div class="product-comments bg-colonial-white-200">
                 <div class="product-comment-header w-full d-flex justify-center items-center">
