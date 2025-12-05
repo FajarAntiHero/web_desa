@@ -48,13 +48,26 @@
                     <p class="font-montserrat font-bold text-colonial-white-950">Suweb</p>
                 </div>
             </div>
-            <div class="nav-list h-fit d-flex justify-between">
-                <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Beranda</a>
+            <div class="nav-list h-fit justify-between">
+                <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item ">Beranda</a>
                 <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Berita</a>
                 <a href="/web_desa/pages/product.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Produk</a>
             </div>
-            <div class="nav-action d-flex h-full justify-end items-center">
+            <div class="nav-action h-full justify-end items-center">
                 <a href="/web_desa/pages/contact.php" class="d-inline-block font-montserrat text-white-50 bg-colonial-white-900 font-bold">Hubungi Kami</a>
+            </div>
+            <div class="toggle-bar">
+                <i class="fa-solid fa-bars text-colonial-white-950"></i>
+            </div>
+            <div class="nav-vertical hidden">
+                <div class="liquid-glass h-full">
+                    <div class="nav-list-vertical d-flex flex-col h-fit">
+                        <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Beranda</a>
+                        <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Berita</a>
+                        <a href="/web_desa/pages/product.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Produk</a>
+                        <a href="/web_desa/pages/contact.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Hubungi Kami</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -81,8 +94,10 @@
                     <div class="d-flex justify-center items-center">
                         <i class="fa-solid fa-magnifying-glass text-colonial-white-950"></i>
                     </div>
-                    <input type="text" id="search-input" name='product-title-search' class="font-montserrat text-colonial-white-950" placeholder="Cilok Seribuan" required>
-                    <button class="font-bold font-montserrat text-colonial-white-950 bg-colonial-white-400">Cari</button>
+                    <div class="d-flex justify-center items-center">
+                        <input type="text" id="search-input" name='product-title-search' class="font-montserrat text-colonial-white-950" placeholder="Cilok Seribuan" required>
+                        <button class="font-bold font-montserrat text-colonial-white-950 bg-colonial-white-400">Cari</button>
+                    </div>
                 </form>
                 <p class="font-bold font-montserrat text-colonial-white-950 d-none">Ditemukan 1 Produk dengan nama <span class="text-colonial-white-400">"Nama Produk"</span></p>
             </div>
@@ -184,5 +199,6 @@
     <script src="../static/javascript/nav-scrolled.js"></script>
     <script src="../static/javascript/animation_on_scroll.js"></script>
     <script src="../static/javascript/liquid-glass.js"></script>
+    <script src="../static/javascript/toggle_nav.js"></script>
 </body>
 </html>

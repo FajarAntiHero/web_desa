@@ -1,6 +1,5 @@
 .navbar-container {
     height: 10vh;
-    /* padding: 12px 0 12px 0; */
 }
 .nav-logo {
     width: 20%;
@@ -8,15 +7,34 @@
 .nav-logo > div:nth-child(2) {
     font-size: 24px;
 }
+#navbar {
+    position: relative;
+}
+.nav-vertical {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+}
+.nav-vertical > div {
+    padding: 2rem 0 0 2rem;
+
+}
+.nav-list,
+.nav-action {
+    display: none;
+}
 .nav-list {
     width: 25%;
 }
 .nav-item {
     padding: 12px 0;
+    width: fit-content;
 }
-.nav-action {
-    width: 20%;
-}
+
 .nav-action > a {
     padding: 8px 16px 8px 16px;
     border-radius: 16px;
@@ -27,6 +45,9 @@
     left: 0;
     z-index: 99999;
 }
+.toggle-bar {
+    display: block;
+}
 .navbar-scrolled {
     background: rgba(255, 255, 255, 0.1);
     transition: 0.5s ease;
@@ -35,4 +56,72 @@
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     /* padding: 15px 50px; */
+}
+@media (min-width: 600px) and (max-width: 767px) {
+    .navbar-container {
+        padding: 0;
+    }
+    .nav-logo > div:nth-child(2) {
+        font-size: 20px;
+    }
+    #navbar {
+        position: relative;
+    }
+    .nav-vertical {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100vw;
+        height: 1000px;
+    }
+    .nav-vertical > div {
+        padding: 2rem 0 0 2rem;
+
+    }
+    .nav-list,
+    .nav-action {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav-list,
+    .nav-action {
+        display: flex;
+    }
+    .toggle-bar {
+        display: none;
+    }
+    .nav-list {
+        width: 30%;
+    }
+    .nav-item {
+        font-size: 14px;
+    }
+    .nav-action > a {
+        font-size: 14px;
+        padding: 6px 12px 6px 12px;
+        border-radius: 14px;
+    }
+    .nav-action {
+        width: 25%;
+    }
+
+}
+@media (min-width: 992px) {
+    .nav-list {
+        width: 25%;
+    }
+    .nav-item {
+        font-size: 16px;
+    }
+    .nav-action > a {
+        font-size: 16px;
+    }
+    .nav-action {
+        width: 20%;
+    }
+    .toggle-bar {
+        display: none;
+    }
 }

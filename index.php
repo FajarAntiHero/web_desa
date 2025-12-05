@@ -1,89 +1,6 @@
 <?php 
-    // require_once 'controller/route.php';
-
-// Include Model (jika ada)
-    // require_once 'model/database.php'; // Contoh: koneksi database
-
-// Include Controller
-    // require_once 'controller/homeController.php';
-    // require_once 'controller/ProductController.php';
-// require_once 'controller/ContactController.php';
-
-// Buat instance router
-// $router = new Router();
-// $router->setViewPath('');
-
-// ========== ROUTES WEB ==========
-
-// Home Page
-// $router->get('', function($params, $router) {
-//     $controller = new HomeController();
-//     $controller->index($router);
-// });
-// $router->setViewPath('pages/');
-// Product Pages
-// $router->get('/product', function($params, $router) {
-//     $controller = new ProductController();
-//     $controller->index($router);
-// });
-
-// $router->get('/product/{id}', function($params, $router) {
-//     $controller = new ProductController();
-//     $controller->detail($params['id'], $router);
-// });
-
-// // News Page
-// $router->get('/news', function($params, $router) {
-//     $router->view('news.php', [
-//         'title' => 'Berita Terbaru',
-//         'news' => [
-//             ['id' => 1, 'title' => 'Berita 1', 'date' => '2025-11-01'],
-//             ['id' => 2, 'title' => 'Berita 2', 'date' => '2025-11-02']
-//         ]
-//     ]);
-// });
-
-// $router->get('/news/{id}', function($params, $router) {
-//     $newsId = $params['id'];
-//     $router->view('news_detail.php', [
-//         'newsId' => $newsId,
-//         'title' => 'Detail Berita ' . $newsId
-//     ]);
-// });
-
-// // Contact Page
-// $router->get('/contact', function($params, $router) {
-//     $controller = new ContactController();
-//     $controller->showForm($router);
-// });
-
-// $router->post('/contact/submit', function($params, $router) {
-//     $controller = new ContactController();
-//     $controller->submit($router);
-// });
-
-// Download
-// $router->get('/download/{file}', function($params, $router) {
-//     $filename = $params['file'];
-//     $filepath = __DIR__ . '/assets/' . $filename;
-    
-//     if (file_exists($filepath)) {
-//         header('Content-Type: application/octet-stream');
-//         header('Content-Disposition: attachment; filename="' . basename($filepath) . '"');
-//         header('Content-Length: ' . filesize($filepath));
-//         readfile($filepath);
-//         exit();
-//     } else {
-//         http_response_code(404);
-//         echo "File tidak ditemukan";
-//     }
-// });
-
-// Jalankan Router
-    // $router->debug();
-    // $router->run();
+    require "utility/utility.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="id-ID">
 <head>
@@ -94,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="static/css/preflight.css">
     <link rel="stylesheet" href="static/css/library.css">
@@ -111,13 +29,26 @@
                     <p class="font-montserrat font-bold text-colonial-white-950">Suweb</p>
                 </div>
             </div>
-            <div class="nav-list h-fit d-flex justify-between">
+            <div class="nav-list h-fit justify-between">
                 <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Beranda</a>
                 <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Berita</a>
                 <a href="/web_desa/pages/product.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Produk</a>
             </div>
-            <div class="nav-action d-flex h-full justify-end items-center">
+            <div class="nav-action h-full justify-end items-center">
                 <a href="/web_desa/pages/contact.php" class="d-inline-block font-montserrat text-white-50 bg-colonial-white-900 font-bold">Hubungi Kami</a>
+            </div>
+            <div class="toggle-bar">
+                <i class="fa-solid fa-bars text-colonial-white-950"></i>
+            </div>
+            <div class="nav-vertical hidden">
+                <div class="liquid-glass h-full">
+                    <div class="nav-list-vertical d-flex flex-col h-fit">
+                        <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Beranda</a>
+                        <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Berita</a>
+                        <a href="/web_desa/pages/product.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Produk</a>
+                        <a href="/web_desa/pages/contact.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Hubungi Kami</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -167,11 +98,11 @@
     <div class="geology d-flex justify-center items-center w-full">
         <div class="container geology-container ">
             <p class="font-bold text-colonial-white-950 font-montserrat">Lokasi Desa Sukasari</p>
-            <div class="maps-container w-full d-flex justify-between">
+            <div class="maps-container w-full">
                 <div class="maps h-full scroll-element fade-left">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63441.256022619134!2d107.03006268041621!3d-6.38386943724485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6999e2fc409c45%3A0xc9f074797f62d3ca!2sSukasari%2C%20Kec.%20Serang%20Baru%2C%20Kabupaten%20Bekasi%2C%20Jawa%20Barat!5e0!3m2!1sid!2sid!4v1762178024172!5m2!1sid!2sid" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full"></iframe>
                 </div>
-                <div class="citizen-information h-full bg-colonial-white-400 d-flex flex-col justify-center items-center scroll-element fade-right">
+                <div class="citizen-information h-full bg-colonial-white-400 scroll-element fade-right">
                     <div>
                         <p class="font-bold font-montserrat text-white-50 text-center counter" data-target="234">0</p>
                         <p class="font-montserrat text-white-50 text-center font-normal">Keluarga</p>
@@ -186,7 +117,7 @@
                     </div>
                 </div>
             </div>
-            <div class="location-description d-flex scroll-element fade-left">
+            <div class="location-description scroll-element fade-left">
                 <div>
                     <p class="font-montserrat text-colonial-white-950 font-normal">Kecamatan</p>
                     <p class="font-bold font-montserrat text-colonial-white-950">Serang Baru</p>
@@ -268,7 +199,7 @@
                                 </div>
                                 <div>
                                     <p class="font-bold font-montserrat text-colonial-white-950">Panen Raya Padi Hasil Melimpah</p>
-                                    <p class="font-montserrat text-white-950 font-normal">Panen yang meningkat dibanding tahun lalu berkat cuaca mendukung dan bantuan pupuk dari desa.</p>
+                                    <p class="font-montserrat text-white-950 font-normal"><?=  potongTeks("Panen yang meningkat dibanding tahun lalu berkat cuaca mendukung dan bantuan pupuk dari desa.", 50)?></p>
                                 </div>
                             </a>
                             <a href="" class="d-flex news-item bg-colonial-white-50 justify-between scroll-element scale-up">
@@ -277,7 +208,7 @@
                                 </div>
                                 <div>
                                     <p class="font-bold font-montserrat text-colonial-white-950">Gotong Royong Bersihkan Lingkungan Desa</p>
-                                    <p class="font-montserrat text-white-950 font-normal">Ratusan warga dari berbagai dusun turun bersama membersihkan jalan, selokan, dan fasilitas umum.</p>
+                                    <p class="font-montserrat text-white-950 font-normal"><?= potongTeks("Ratusan warga dari berbagai dusun turun bersama membersihkan jalan, selokan, dan fasilitas umum.", 50)?></p>
                                 </div>
                             </a>
                             <a href="" class="d-flex news-item bg-colonial-white-50 justify-between scroll-element scale-up">
@@ -286,7 +217,7 @@
                                 </div>
                                 <div>
                                     <p class="font-bold font-montserrat text-colonial-white-950">Festival Budaya Desa Sukasari</p>
-                                    <p class="font-montserrat text-white-950 font-normal">Festival budaya menampilkan tarian tradisional, musik daerah, dan pameran hasil karya warga.</p>
+                                    <p class="font-montserrat text-white-950 font-normal"><?= potongTeks("Festival budaya menampilkan tarian tradisional, musik daerah, dan pameran hasil karya warga.", 50)?></p>
                                 </div>
                             </a>
                             <a href="" class="d-flex justify-center items-center bg-colonial-white-50 font-bold font-montserrat text-colonial-white-950 news-cta scroll-element scale-up">
@@ -503,6 +434,7 @@
     </footer>
 
     <script src="static/javascript/nav-scrolled.js"></script>
+    <script src="static/javascript/toggle_nav.js"></script>
     <script src="static/javascript/animation_on_scroll.js"></script>
     <script src="static/javascript/liquid-glass.js"></script>
     <!-- <script src="static/javascript/gallery_card.js"></script> -->

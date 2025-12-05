@@ -20,13 +20,13 @@ class Database {
         // Flag untuk menandai apakah database baru saja dibuat
         $db_baru_dibuat = false;
 
-        // 1. Coba koneksi ke MySQL Server tanpa menyebut database
+        // Coba koneksi ke MySQL Server tanpa menyebut database
         $server_koneksi = new mysqli($this->host, $this->user, $this->password);
         if ($server_koneksi->connect_error) {
             die("Koneksi ke MySQL Server gagal: " . $server_koneksi->connect_error);
         }
 
-        // 2. Cek apakah database sudah ada
+        // Cek apakah database sudah ada
         $db_check_query = "SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA WHERE SCHEMA_NAME = '$this->database'";
         $result = $server_koneksi->query($db_check_query);
 
@@ -44,9 +44,9 @@ class Database {
             }
         }
         
-        // $server_koneksi->close();
+        $server_koneksi->close();
 
-        // 3. Buat koneksi final ke database spesifik
+        // Buat koneksi final ke database spesifik
         $this->koneksi = new mysqli($this->host, $this->user, $this->password, $this->database);
         if ($this->koneksi->connect_error) {
             die("Koneksi final ke database **'$this->database'** gagal: " . $this->koneksi->connect_error);
@@ -76,7 +76,6 @@ class Database {
         }
 
         $sql_content = file_get_contents($this->sql_file);
-        // echo $sql_content;
         
         if ($this->koneksi->multi_query($sql_content)) {
             // echo "Struktur tabel awal berhasil di-setup dari file **'$this->sql_file'**.<br>";

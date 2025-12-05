@@ -2,21 +2,22 @@
     height: calc(100vh - 10vh);
 }
 .hero-page-news-container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(2, 200px);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr;
     gap: 24px;
-    height: fit-content;
+    height: 100%;
+    padding: 2rem;
 }
 .news-quote {
-    grid-area: 1/1/2/3;
-    padding: 24px;
+    grid-area: 1/1/2/2;
+    padding: 16px;
 }
 .news-quote > div:nth-child(1) > p {
-    font-size: 32px;
+    font-size: 20px;
     font-style: italic;
 }
 .news-quote > div:nth-child(2) > p:nth-child(1) {
-    font-size: 20px;
+    font-size: 16px;
 }
 .news-hot-topic {
     grid-area: 2/1/3/2;
@@ -26,7 +27,7 @@
     object-fit: cover;
 }
 .news-event {
-    grid-area: 2/2/3/3;
+    grid-area: 3/1/4/2;
     border: dashed 2px #461302;
     padding: 16px;
 }
@@ -40,7 +41,7 @@
     padding: 5rem 0;
 }
 .news-search-container > p:nth-child(1) {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 16px;
 }
 .search-input {
@@ -48,33 +49,34 @@
 }
 .search-input > form {
     height: 70px;
-    padding: 12px;
+    padding: 8px;
     margin-bottom: 16px;
     border-radius: 36px;
+    gap: 16px;
 }
 .search-input > form > div:nth-child(1) {
-    width: 5%;
+    width: 100%;
 }
-.search-input > form > div:nth-child(1) > i {
-    font-size: 32px;
+.search-input > form > div:nth-child(1){
+    display: none;
 }
 #search-input {
-    width: 85%;
+    width: 82%;
     border-radius: 30px;
-    padding: 0 20px;
-    font-size: 20px;
+    padding: 0 16px;
+    font-size: 16px;
     outline: none;
 }
 .search-input > form > button {
-    font-size: 20px;
-    padding: 0 20px;
+    width: 15%;
+    font-size: 16px;
     border-radius: 30px;
 }
 .news-card-content {
     height: 80%;
 }
 .news-card-item {
-    width: 280px;
+    width: 100%;
     height: 350px;
     border-radius: 24px;
     border: solid 2px #461302;
@@ -116,8 +118,11 @@
     margin-bottom: 3rem;
 }
 .news-history-header > p:nth-child(1) {
-    font-size: 24px;
-    margin-bottom: 24px;
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
+.news-result-information {
+    font-size: 14px;
 }
 .news-history-years {
     margin-bottom: 12px;
@@ -140,4 +145,93 @@
     border-radius: 12px;
     border: solid #461302 2px;
     margin-right: 12px;
+}
+
+@media (min-width: 600px) {
+    .news-card-item {
+        width: 300px;
+    }
+}
+
+@media (min-width: 768px) {
+    .news-quote > div:nth-child(1) > p {
+        font-size: 24px;
+    }
+    .news-result-information {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero-page {
+        height: calc(100vh - 10vh);
+    }
+    .hero-page-news-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, 200px);
+        gap: 24px;
+        height: fit-content;
+    }
+    .news-quote {
+        grid-area: 1/1/2/3;
+        padding: 24px;
+    }
+    .news-quote > div:nth-child(1) > p {
+        font-size: 32px;
+    }
+    .news-quote > div:nth-child(2) > p:nth-child(1) {
+        font-size: 20px;
+    }
+    .news-hot-topic {
+        grid-area: 2/1/3/2;
+    }
+    .news-event {
+        grid-area: 2/2/3/3;
+    }
+    .news-search {
+        padding: 5rem 0;
+    }
+    .news-search-container > p:nth-child(1) {
+        font-size: 24px;
+    }
+    .search-input > form > div:nth-child(1) {
+        width: 5%;
+    }
+    .search-input > form > div:nth-child(1) > i {
+        font-size: 32px;
+    }
+    #search-input {
+        width: 85%;
+        border-radius: 30px;
+        padding: 0 20px;
+        font-size: 20px;
+        outline: none;
+    }
+    .search-input > form > button {
+        font-size: 20px;
+        padding: 0 20px;
+        border-radius: 30px;
+    }
+    .news-card-content {
+        height: 80%;
+    }
+    .news-card-item {
+        width: 280px;
+        height: 350px;
+        margin-bottom: 2rem;
+    }
+    .news-history-container {
+        padding-top: 5rem;
+        padding-bottom: 6rem;
+    }
+    .news-history-header {
+        margin-bottom: 3rem;
+    }
+    .news-history-header > p:nth-child(1) {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+    .news-history-items {
+        margin-bottom: 3rem;
+    }
 }
