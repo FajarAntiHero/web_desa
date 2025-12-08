@@ -110,6 +110,7 @@
 .product-comment-send > form > button {
     width: 10%;
     border-radius: 24px;
+    cursor: pointer;
 }
 .fa-paper-plane {
     line-height: 0;
@@ -117,7 +118,7 @@
 .comment {
     border-radius: 0px 12px 12px 12px;
     padding: 8px;
-    
+    margin-bottom: 12px;
 }
 .comment-identification {
     font-size: 8px;

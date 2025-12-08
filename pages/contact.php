@@ -41,7 +41,7 @@
             <div class="nav-vertical hidden">
                 <div class="liquid-glass h-full">
                     <div class="nav-list-vertical d-flex flex-col h-fit">
-                        <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Beranda</a>
+                        <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Beranda</a>
                         <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Berita</a>
                         <a href="/web_desa/pages/product.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Produk</a>
                         <a href="/web_desa/pages/contact.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Hubungi Kami</a>
@@ -94,13 +94,13 @@
                         <p class="font-bold text-colonial-white-950">Suweb</p>
                     </div>
                     <div class="footer-information-detail">
-                        <p class="text-colonial-white-950">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate tenetur unde enim ratione ab aliquid consequuntur ad tempora illo a.</p>
+                        <p class="text-colonial-white-950">Website resmi Desa Sukasari menyajikan informasi terkini seputar pemerintahan, pembangunan, kegiatan masyarakat, dan potensi desa.</p>
                     </div>
                 </div>
                 <div class="footer-detail bg-colonial-white-100 scroll-element scale-up">
                     <p class="text-colonial-white-950 font-bold">Alamat Kantor Desa</p>
                     <p class="text-colonial-white-950 font-normal">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ullam eos dicta laboriosam aliquid expedita nihil 
+                        Jl. Raya Serang Jl. Raya Serang Cibarusah 17330 Kabupaten Bekasi Jawa Barat 
                     </p>
                 </div>
             </div>
@@ -111,7 +111,7 @@
                     <li><a href="" class="text-colonial-white-950">Program Kerja</a></li>
                     <li><a href="" class="text-colonial-white-950">Lokasi</a></li>
                     <li><a href="" class="text-colonial-white-950">Pengurus</a></li>
-                    <li><a href="" class="text-colonial-white-950">Berita Masyarakt</a></li>
+                    <li><a href="" class="text-colonial-white-950">Berita Masyarakat</a></li>
                     <li><a href="" class="text-colonial-white-950">Produk Lokal</a></li>
                 </ul>
             </div>

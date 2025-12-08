@@ -8,10 +8,10 @@
         // Lakukan query pencarian berdasarkan judul berita
         $query = "SELECT * FROM product_table WHERE product_title LIKE '%$searchTitle%'";
         $result = $koneksi->query($query);
-        $getSearchNews = [];
+        $getProducts = [];
         if ($result) {
             while ($row = $result->fetch_assoc()) {
-                $getSearchNews[] = $row;
+                $getProducts[] = $row;
             }
         }
     }
@@ -76,7 +76,7 @@
             <div class="hero-page-slogan w-fit h-fit bg-colonial-white-200 scroll-element fade-top">
                 <p class="font-montserrat text-colonial-white-950 font-normal">Dukung Produk Lokal, Dukung Ekonomi Lokal</p>
             </div>
-            <p class="font-montserrat text-center text-colonial-white-950 scroll-element scale-up font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste autem alias blanditiis sequi voluptas molestiae!</p>
+            <p class="font-montserrat text-center text-colonial-white-950 scroll-element scale-up font-normal">Dengan mendukung produk Lokal membantu warga lokal memenuhi kebutuhan mereka sehari hari</p>
             <a href="#products" class="font-montserrat font-bold d-inline-block hero-page-atc w-fit h-fit text-colonial-white-950 scroll-element scale-up">Jelajahi Produk Lokal Sukasari</a>
         </div>
         <i class="fa-solid fa-cart-arrow-down absolute text-colonial-white-400 scroll-element fade-left"></i>
@@ -102,8 +102,8 @@
                 <p class="font-bold font-montserrat text-colonial-white-950 d-none">Ditemukan 1 Produk dengan nama <span class="text-colonial-white-400">"Nama Produk"</span></p>
             </div>
             <div class="product-card-container d-flex flex-wrap justify-evenly">
-                <?php if (isset($getSearchNews)): ?>
-                    <?php foreach ($getSearchNews as $productItem): ?>
+                <?php if (isset($getProducts)): ?>
+                    <?php foreach ($getProducts as $productItem): ?>
                         <?php
                             $productItem['product_title'] = potongTeks($productItem['product_title'], 50);
                             $productItem['product_description'] = potongTeks($productItem['product_description'], 70);
@@ -118,7 +118,7 @@
                                     <p class="text-colonial-white-900 font-montserrat font-normal"><?= $productItem['product_description'] ?></p>
                                 </div>
                             </div>
-                            <a href="/web_desa/pages/product_item.php" class="product-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
+                            <a href="/web_desa/pages/product_item.php?product_id=<?= $productItem['id'] ?>" class="product-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
                                 Lihat Produk
                             </a>
                         </div>
@@ -159,13 +159,13 @@
                         <p class="font-bold text-colonial-white-950">Suweb</p>
                     </div>
                     <div class="footer-information-detail">
-                        <p class="text-colonial-white-950">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate tenetur unde enim ratione ab aliquid consequuntur ad tempora illo a.</p>
+                        <p class="text-colonial-white-950">Website resmi Desa Sukasari menyajikan informasi terkini seputar pemerintahan, pembangunan, kegiatan masyarakat, dan potensi desa.</p>
                     </div>
                 </div>
                 <div class="footer-detail bg-colonial-white-100 scroll-element scale-up">
                     <p class="text-colonial-white-950 font-bold">Alamat Kantor Desa</p>
                     <p class="text-colonial-white-950 font-normal">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ullam eos dicta laboriosam aliquid expedita nihil 
+                        Jl. Raya Serang Jl. Raya Serang Cibarusah 17330 Kabupaten Bekasi Jawa Barat 
                     </p>
                 </div>
             </div>
@@ -176,7 +176,7 @@
                     <li><a href="" class="text-colonial-white-950">Program Kerja</a></li>
                     <li><a href="" class="text-colonial-white-950">Lokasi</a></li>
                     <li><a href="" class="text-colonial-white-950">Pengurus</a></li>
-                    <li><a href="" class="text-colonial-white-950">Berita Masyarakt</a></li>
+                    <li><a href="" class="text-colonial-white-950">Berita Masyarakat</a></li>
                     <li><a href="" class="text-colonial-white-950">Produk Lokal</a></li>
                 </ul>
             </div>

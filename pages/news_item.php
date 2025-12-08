@@ -1,3 +1,39 @@
+<?php
+    require '../model/news_model.php';
+    $getData = $koneksi;
+
+    if (isset($_GET['news_id'])) {
+        $getID = $_GET['news_id'];
+        // Lakukan query pencarian berdasarkan judul berita
+        $query = "SELECT * FROM news WHERE id = '$getID'";
+        $result = $getData->query($query);
+        $getSearchNews = [];
+        // echo $query;
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $getSearchNews[] = $row;
+            }
+        }
+        $getComment = getComment($getID);
+        // var_dump($getSearchNews);   
+    }
+    else {
+        $searchTitle = [];
+    }
+
+    if (isset($_POST['send_comment'], $_POST['news_id'], $_POST['comment'])) {
+        $sendComment = $_POST['send_comment'];
+        $newsID = $_POST['news_id'];
+        $commentText = $_POST['comment'];
+        $query = "INSERT INTO news_comment (news_id, comment_text, comment_date_send, comment_time_send) VALUES ('$newsID', '$commentText', CURDATE(), CURTIME())";
+        $result = $getData->query($query);
+        if ($result) {
+            header("Location: /web_desa/pages/news_item.php?news_id=$newsID");
+        exit();}
+        
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="id-ID">
 <head>
@@ -30,8 +66,8 @@
                 </div>
             </div>
             <div class="nav-list h-fit justify-between">
-                <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Beranda</a>
-                <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Berita</a>
+                <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item ">Beranda</a>
+                <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Berita</a>
                 <a href="/web_desa/pages/product.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Produk</a>
             </div>
             <div class="nav-action h-full justify-end items-center">
@@ -56,43 +92,43 @@
     <!-- HERO PAGE -->
     <div class="news-header d-flex items-center">
         <div class="container news-header-container bg-colonial-white-200 d-flex justify-between h-fit">
-            <div class="news-header-img h-full">
+            <div class="news-header-img">
                 <img src="../assets/img/hero-page-image.jpg" alt="" class="w-full h-full object-cover">
             </div>
             <div class="news-header-information d-flex flex-col justify-between">
                 <div class="news-header-title bg-white-50 d-flex">
                     <div class="bg-colonial-white-400 h-full"></div>
                     <div class="h-full">
-                        <p class="font-montserrat font-bold text-colonial-white-950">Judul Berita</p>
+                        <p class="font-montserrat font-bold text-colonial-white-950"><?= $getSearchNews[0]['news_title'] ?></p>
                     </div>
                 </div>
-                <div class="d-flex justify-between">
+                <div class="d-flex">
                     <div class="news-header-release-date">
                         <p class="font-montserrat text-colonial-white-950 font-bold">Tanggal Rilis</p>
                         <div class="bg-white-50 d-flex">
                             <div><i class="fa-regular fa-calendar text-colonial-white-950"></i></div>
-                            <p class="font-montserrat text-colonial-white-950">20 Maret 2025</p>
+                            <p class="font-montserrat text-colonial-white-950"><?= $getSearchNews[0]['news_release_date'] ?></p>
                         </div>
                     </div>
                     <div class="news-header-writer">
                         <p class="font-montserrat text-colonial-white-950 font-bold">Penulis</p>
                         <div class="bg-white-50 d-flex">
                             <div><i class="fa-solid fa-pen-fancy text-colonial-white-950"></i></div>
-                            <p class="font-montserrat text-colonial-white-950">Fajar Maulana</p>
+                            <p class="font-montserrat text-colonial-white-950"><?= $getSearchNews[0]['news_author'] ?></p>
                         </div>
                     </div>
                     <div class="news-header-reader">
                         <p class="font-montserrat text-colonial-white-950 font-bold">Pembaca</p>
                         <div class="bg-white-50 d-flex">
                             <div><i class="fa-solid fa-eye text-colonial-white-950"></i></div>
-                            <p class="font-montserrat text-colonial-white-950">245</p>
+                            <p class="font-montserrat text-colonial-white-950"><?= $getSearchNews[0]['news_reader'] ?></p>
                         </div>
                     </div>
                     <div class="news-header-like">
                         <p class="font-montserrat text-colonial-white-950 font-bold">Suka</p>
                         <div class="bg-white-50 d-flex">
                             <div><i class="fa-regular fa-thumbs-up text-colonial-white-950"></i></div>
-                            <p class="font-montserrat text-colonial-white-950">23</p>
+                            <p class="font-montserrat text-colonial-white-950"><?= $getSearchNews[0]['news_likes'] ?></p>
                         </div>
                     </div>
                 </div>
@@ -101,7 +137,7 @@
                         <p class="font-montserrat text-colonial-white-950">Sinopsis Berita</p>
                     </div>
                     <div>
-                        <p class="font-montserrat text-colonial-white-950">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, numquam veniam aliquid suscipit id voluptates.</p>
+                        <p class="font-montserrat text-colonial-white-950"><?= $getSearchNews[0]['news_text'] ?></p>
                     </div>
                 </div>
             </div>
@@ -109,11 +145,10 @@
     </div>
 
     <!-- NEWS DETAIL -->
-    <div class="news-detail w-full h-fit bg-white-50">
+    <div class="news-detail w-full h-fit bg-white-50" id="news-detail">
         <div class="container news-detail-container d-flex justify-between">
             <div class="news">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi veritatis numquam ipsa in cum maiores eos nostrum dolore cumque explicabo ex sed vitae et, repudiandae iste fugit praesentium 
-                    odio magnam! Possimus nobis laborum cumque molestiae nemo. Earum consequuntur dolore incidunt laborum similique quam alias expedita quas rerum harum! Minus, facilis.</p>
+                <p class="font-montserrat text-colonial-white-950"><?= $getSearchNews[0]['news_text'] ?></p>
             </div>
             <div class="news-comments bg-colonial-white-200">
                 <div class="news-comment-header w-full d-flex justify-center items-center">
@@ -121,17 +156,20 @@
                 </div>
                 <div class="news-comment-container w-full">
                     <div class="w-full h-full">
-                        <div class="comment w-fit h-fit bg-colonial-white-50">
-                            <p class="comment-identification font-montserrat text-white-500">Anonymous | 12.30</p>
-                            <p class="comment-content font-montserrat text-colonial-white-950">kereen</p>
-                        </div>
+                        <?php foreach ($getComment as $comment): ?>
+                            <div class="comment w-fit h-fit bg-colonial-white-50">
+                                <p class="comment-identification font-montserrat text-white-500">Anonymous | <?= $comment['comment_time_send'] ?></p>
+                                <p class="comment-content font-montserrat text-colonial-white-950"><?= $comment['comment_text'] ?></p> 
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div> 
                 <div class="news-comment-send w-full">
-                    <form action="" class="w-full h-full bg-white-50 d-flex justify-between">
-                        <input type="text" placeholder="tambahkan komentar" class="font-montserrat h-full text-colonial-white-950">
-                        <button class="bg-colonial-white-200 h-full d-flex justify-center items-center"><i class="fa-regular fa-paper-plane text-colonial-white-950"></i></button>
-                    </form>                    
+                    <form action="#news-detail" method="POST" class="w-full h-full bg-white-50 d-flex justify-between">
+                        <input type="text" hidden name="news_id" value="<?= $getID ?>">
+                        <input type="text" placeholder="tambahkan komentar" class="font-montserrat h-full text-colonial-white-950" name="comment">
+                        <button class="bg-colonial-white-200 h-full d-flex justify-center items-center" name="send_comment"><i class="fa-regular fa-paper-plane text-colonial-white-950"></i></button>
+                    </form>                      
                 </div>
             </div>
         </div>
@@ -147,13 +185,13 @@
                         <p class="font-bold text-colonial-white-950">Suweb</p>
                     </div>
                     <div class="footer-information-detail">
-                        <p class="text-colonial-white-950">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate tenetur unde enim ratione ab aliquid consequuntur ad tempora illo a.</p>
+                        <p class="text-colonial-white-950">Website resmi Desa Sukasari menyajikan informasi terkini seputar pemerintahan, pembangunan, kegiatan masyarakat, dan potensi desa.</p>
                     </div>
                 </div>
                 <div class="footer-detail bg-colonial-white-100 scroll-element scale-up">
                     <p class="text-colonial-white-950 font-bold">Alamat Kantor Desa</p>
                     <p class="text-colonial-white-950 font-normal">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ullam eos dicta laboriosam aliquid expedita nihil 
+                        Jl. Raya Serang Jl. Raya Serang Cibarusah 17330 Kabupaten Bekasi Jawa Barat 
                     </p>
                 </div>
             </div>
@@ -164,7 +202,7 @@
                     <li><a href="" class="text-colonial-white-950">Program Kerja</a></li>
                     <li><a href="" class="text-colonial-white-950">Lokasi</a></li>
                     <li><a href="" class="text-colonial-white-950">Pengurus</a></li>
-                    <li><a href="" class="text-colonial-white-950">Berita Masyarakt</a></li>
+                    <li><a href="" class="text-colonial-white-950">Berita Masyarakat</a></li>
                     <li><a href="" class="text-colonial-white-950">Produk Lokal</a></li>
                 </ul>
             </div>

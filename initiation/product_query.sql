@@ -26,7 +26,7 @@ CREATE TABLE product_shop(
 );
 
 CREATE TABLE product_comment(
-    id CHAR(15) PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     comment_time_send TIME NOT NULL,
     comment_date_send DATE NOT NULL,
     comment_text LONGTEXT NOT NULL,
@@ -66,9 +66,9 @@ INSERT INTO product_shop (id, shop_name, shop_link, shop_app, product_id) VALUES
 ('S0009', 'Kopi Nusantara Official', 'https://blibli.com/kopi-nusantara-premium', 'Blibli', 'PROD009'),
 ('S0010', 'Arena Sports Center', 'https://shopee.co.id/arena-sports-official', 'Shopee', 'PROD010');
 
-INSERT INTO product_comment (id, comment_time_send, comment_date_send, comment_text, product_id) VALUES
-('COMM-000000001', '14:30:00', '2025-11-28', 'Smartwatchnya keren banget! Baterainya awet sesuai deskripsi.', 'PROD001'),
-('COMM-000000002', '09:15:00', '2025-11-29', 'Kemeja ini bahannya adem dan jahitannya rapi. Sangat puas!', 'PROD002'),
-('COMM-000000003', '20:45:00', '2025-11-29', 'Sofa datang dengan cepat dan mudah dirakit. Ruangan jadi estetik.', 'PROD003'),
-('COMM-000000004', '07:00:00', '2025-11-30', 'Kopi Gayo ini aroma dan rasanya mantap sekali, wajib coba!', 'PROD004'),
-('COMM-000000005', '16:10:00', '2025-11-30', 'Raketnya ringan, tarikan kencang, dan handlingnya enak buat smash.', 'PROD005');
+INSERT INTO product_comment (comment_time_send, comment_date_send, comment_text, product_id) VALUES
+('14:30:00', '2025-11-28', 'Smartwatchnya keren banget! Baterainya awet sesuai deskripsi.', 'PROD001'),
+('09:15:00', '2025-11-29', 'Kemeja ini bahannya adem dan jahitannya rapi. Sangat puas!', 'PROD002'),
+('20:45:00', '2025-11-29', 'Sofa datang dengan cepat dan mudah dirakit. Ruangan jadi estetik.', 'PROD003'),
+('07:00:00', '2025-11-30', 'Kopi Gayo ini aroma dan rasanya mantap sekali, wajib coba!', 'PROD004'),
+('16:10:00', '2025-11-30', 'Raketnya ringan, tarikan kencang, dan handlingnya enak buat smash.', 'PROD005');

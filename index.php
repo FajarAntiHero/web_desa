@@ -137,10 +137,10 @@
     <div class="structure-organization w-full bg-colonial-white-200">
         <div class="container structure-organization-container h-full d-flex justify-between">
             <div class="structure-organization-text h-full d-flex flex-col justify-between">
-                <p class="font-montserrat text-colonial-white-950 font-normal scroll-element fade-left">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptas illum rem, ipsa tempore voluptates?</p>
+                <p class="font-montserrat text-colonial-white-950 font-normal scroll-element fade-left">Di desa ini, kebenaran adalah benih yang kita tanam. Kejujuran informasi membangun jembatan kepercayaan antarwarga.</p>
                 <div>
-                    <p class="font-montserrat text-colonial-white-950 font-bold scroll-element fade-left">Fajar Maulana</p>
-                    <p class="font-montserrat text-colonial-white-950 font-normal scroll-element fade-left">Professor</p>
+                    <p class="font-montserrat text-colonial-white-950 font-bold scroll-element fade-left">Arif Hidayat</p>
+                    <p class="font-montserrat text-colonial-white-950 font-normal scroll-element fade-left">Kepala Desa Sukasari</p>
                 </div>
             </div>
             <div class="structure-organization-img h-full scroll-element fade-right">
@@ -152,7 +152,7 @@
         <div class="container event-history-container scroll-element scale-up">
             <div class="w-full h-full">
                 <div class="h-full d-flex flex-col justify-between">
-                    <p class="font-montserrat text-colonial-white-50 font-normal">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque consequatur officia, tenetur nobis pariatur amet.</p>
+                    <p class="font-montserrat text-colonial-white-50 font-normal">Warga Desa Sukasari mengikuti upacara Hari Kemerdekaan untuk mempererat tali persaudaraan dan merayakan budaya lokal.</p>
                     <p class="font-montserrat text-colonial-white-50 font-normal">Upacara Hari Kemerdekaan | <span class="font-bold">17 Agustus 2025</span></p>
                 </div>
             </div>
@@ -231,8 +231,8 @@
     </div>
     <div class="quote bg-white-50 d-flex justify-center items-center">
         <div class="container quote-container bg-colonial-white-400 d-flex flex-col justify-between">
-            <p class="font-montserrat text-colonial-white-950 text-center">Lorem ipsum dolor sit, amet consectetur adipisicing elit. A, rem. Illo praesentium quaerat amet quis!</p>
-            <p class="font-montserrat text-colonial-white-950 font-bold text-center">Fajar Maulana | Profesor</p>
+            <p class="font-montserrat text-colonial-white-950 text-center">Hormati Adat Istiadat Satu Sama Lain, Untuk Mempererat Tali Silahturahmi</p>
+            <p class="font-montserrat text-colonial-white-950 font-bold text-center">Arif Hidayat | Kepala Desa</p>
         </div>
     </div>
     <div class="products bg-colonial-white-200 w-full">

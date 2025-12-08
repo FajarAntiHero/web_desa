@@ -1,3 +1,40 @@
+<?php 
+    require '../model/product_model.php';
+    $getData = $koneksi;
+
+    if (isset($_GET['product_id'])) {
+        $getID = $_GET['product_id'];
+        // Lakukan query pencarian berdasarkan judul berita
+        $query = "SELECT * FROM product_table WHERE id = '$getID'";
+        $result = $getData->query($query);
+        $getProducts = [];
+        // var_dump($result);
+        // echo $query;
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $getProducts[] = $row;
+            }
+        }
+        $getComment = getComment($getID);
+        // var_dump($getSearchNews);   
+    }
+    else {
+        $searchTitle = [];
+    }
+
+    if (isset($_POST['send_comment'], $_POST['product_id'], $_POST['comment'])) {
+        $sendComment = $_POST['send_comment'];
+        $productID = $_POST['product_id'];
+        $commentText = $_POST['comment'];
+        $query = "INSERT INTO product_comment (product_id, comment_text, comment_date_send, comment_time_send) VALUES ('$productID', '$commentText', CURDATE(), CURTIME())";
+        $result = $getData->query($query);
+        if ($result) {
+            header("Location: /web_desa/pages/product_item.php?product_id=$productID");
+        exit();}
+        
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="id-ID">
 <head>
@@ -63,7 +100,7 @@
                 <div class="product-header-title bg-white-50 d-flex">
                     <div class="bg-colonial-white-400 h-full"></div>
                     <div class="h-full">
-                        <p class="text-colonial-white-950 font-bold font-montserrat">Nama Produk</p>
+                        <p class="text-colonial-white-950 font-bold font-montserrat"><?= $getProducts[0]['product_title'] ?></p>
                     </div>
                 </div>
                 <div class="d-flex justify-between">
@@ -71,28 +108,28 @@
                         <p class="text-colonial-white-950 font-bold font-montserrat">Harga</p>
                         <div class="bg-white-50 d-flex">
                             <div><i class="fa-regular fa-calendar text-colonial-white-950"></i></div>
-                            <p class="font-montserrat text-colonial-white-950">Rp. 3.000</p>
+                            <p class="font-montserrat text-colonial-white-950"><?= $getProducts[0]['product_price'] ?></p>
                         </div>
                     </div>
                     <div class="product-shop">
                         <p class="text-colonial-white-950 font-bold  font-montserrat">Toko</p>
                         <div class="bg-white-50 d-flex">
                             <div><i class="fa-solid fa-pen-fancy text-colonial-white-950"></i></div>
-                            <p class="font-montserrat text-colonial-white-950">Warung A</p>
+                            <p class="font-montserrat text-colonial-white-950"><?= $getProducts[0]['product_shop'] ?></p>
                         </div>
                     </div>
                     <div class="product-header-reader">
                         <p class="text-colonial-white-950 font-bold  font-montserrat">Pelihat</p>
                         <div class="bg-white-50 d-flex">
                             <div><i class="fa-solid fa-eye text-colonial-white-950"></i></div>
-                            <p class="font-montserrat text-colonial-white-950">245</p>
+                            <p class="font-montserrat text-colonial-white-950"><?= $getProducts[0]['product_reader'] ?></p>
                         </div>
                     </div>
                     <div class="product-header-like">
                         <p class="text-colonial-white-950 font-bold  font-montserrat">Suka</p>
                         <div class="bg-white-50 d-flex">
                             <div><i class="fa-regular fa-thumbs-up text-colonial-white-950"></i></div>
-                            <p class="font-montserrat text-colonial-white-950">23</p>
+                            <p class="font-montserrat text-colonial-white-950"><?= $getProducts[0]['product_likes'] ?></p>
                         </div>
                     </div>
                 </div>
@@ -101,7 +138,7 @@
                         <p class= "font-montserrat text-colonial-white-950">Deskripsi Singkat</p>
                     </div>
                     <div>
-                        <p class= "font-montserrat text-colonial-white-950">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, numquam veniam aliquid suscipit id voluptates.</p>
+                        <p class= "font-montserrat text-colonial-white-950"><?= $getProducts[0]['product_description'] ?></p>
                     </div>
                 </div>
             </div>
@@ -109,10 +146,10 @@
     </div>
 
     <!-- PRODUCT DETAIL -->
-    <div class="product-detail w-full h-fit bg-white-50">
+    <div class="product-detail w-full h-fit bg-white-50" id="product_id">
         <div class="container product-detail-container d-flex justify-between">
             <div class="product">
-                <p class="font-montserrat text-colonial-white-950">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi veritatis numquam ipsa in cum maiores eos nostrum dolore cumque explicabo ex sed vitae et, repudiandae iste fugit praesentium odio magnam! Possimus nobis laborum cumque molestiae nemo. Earum consequuntur dolore incidunt laborum similique quam alias expedita quas rerum harum! Minus, facilis.</p>
+                <p class="font-montserrat text-colonial-white-950"><?= $getProducts[0]['product_description'] ?></p>
             </div>
             <div class="product-comments bg-colonial-white-200">
                 <div class="product-comment-header w-full d-flex justify-center items-center">
@@ -120,16 +157,19 @@
                 </div>
                 <div class="product-comment-container w-full">
                     <div class="w-full h-full">
-                        <div class="comment w-fit h-fit bg-colonial-white-50">
-                            <p class="comment-identification font-montserrat text-white-500">Anonymous | 12.30</p>
-                            <p class="comment-content font-montserrat text-colonial-white-950">kereen</p>
-                        </div>
+                        <?php foreach ($getComment as $comment): ?>
+                            <div class="comment w-fit h-fit bg-colonial-white-50">
+                                <p class="comment-identification font-montserrat text-white-500">Anonymous | <?= $comment['comment_time_send'] ?></p>
+                                <p class="comment-content font-montserrat text-colonial-white-950"><?= $comment['comment_text'] ?></p> 
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div> 
                 <div class="product-comment-send w-full">
-                    <form action="" class="w-full h-full bg-white-50 d-flex justify-between">
-                        <input type="text" placeholder="tambahkan komentar" class="font-montserrat h-full text-colonial-white-950">
-                        <button class="bg-colonial-white-200 h-full d-flex justify-center items-center"><i class="fa-regular fa-paper-plane text-colonial-white-950"></i></button>
+                    <form action="#product_id" method="POST" class="w-full h-full bg-white-50 d-flex justify-between">
+                        <input type="text" hidden name="product_id" value="<?= $getID ?>">
+                        <input type="text" placeholder="tambahkan komentar" class="font-montserrat h-full text-colonial-white-950" name="comment">
+                        <button class="bg-colonial-white-200 h-full d-flex justify-center items-center" name="send_comment"><i class="fa-regular fa-paper-plane text-colonial-white-950"></i></button>
                     </form>                    
                 </div>
             </div>
@@ -146,13 +186,13 @@
                         <p class="font-bold text-colonial-white-950">Suweb</p>
                     </div>
                     <div class="footer-information-detail">
-                        <p class="text-colonial-white-950">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate tenetur unde enim ratione ab aliquid consequuntur ad tempora illo a.</p>
+                        <p class="text-colonial-white-950">Website resmi Desa Sukasari menyajikan informasi terkini seputar pemerintahan, pembangunan, kegiatan masyarakat, dan potensi desa.</p>
                     </div>
                 </div>
                 <div class="footer-detail bg-colonial-white-100 scroll-element scale-up">
                     <p class="text-colonial-white-950 font-bold">Alamat Kantor Desa</p>
                     <p class="text-colonial-white-950 font-normal">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ullam eos dicta laboriosam aliquid expedita nihil 
+                        Jl. Raya Serang Jl. Raya Serang Cibarusah 17330 Kabupaten Bekasi Jawa Barat 
                     </p>
                 </div>
             </div>
@@ -163,7 +203,7 @@
                     <li><a href="" class="text-colonial-white-950">Program Kerja</a></li>
                     <li><a href="" class="text-colonial-white-950">Lokasi</a></li>
                     <li><a href="" class="text-colonial-white-950">Pengurus</a></li>
-                    <li><a href="" class="text-colonial-white-950">Berita Masyarakt</a></li>
+                    <li><a href="" class="text-colonial-white-950">Berita Masyarakat</a></li>
                     <li><a href="" class="text-colonial-white-950">Produk Lokal</a></li>
                 </ul>
             </div>

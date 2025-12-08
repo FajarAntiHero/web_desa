@@ -756,6 +756,16 @@
         border-radius: 12px;
         font-size: 12px;
     }
+    .quote {
+        height: 50vh;
+        padding: 1rem;
+    }
+    .quote-container > p:nth-child(1) {
+        font-size: 32px;
+    }
+    .quote-container > p:nth-child(2) {
+        font-size: 20px;
+    }
 }
 @media (min-width: 1200px) {
     .visi-misi {

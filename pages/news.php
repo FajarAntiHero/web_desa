@@ -60,8 +60,8 @@
                 </div>
             </div>
             <div class="nav-list h-fit justify-between">
-                <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Beranda</a>
-                <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Berita</a>
+                <a href="/web_desa/" class="font-montserrat d-inline-block text-colonial-white-950 nav-item ">Beranda</a>
+                <a href="/web_desa/pages/news.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item active">Berita</a>
                 <a href="/web_desa/pages/product.php" class="font-montserrat d-inline-block text-colonial-white-950 nav-item">Produk</a>
             </div>
             <div class="nav-action h-full justify-end items-center">
@@ -86,10 +86,10 @@
         <div class="container d-grid hero-page-news-container">
             <div class="news-quote bg-colonial-white-400 d-flex flex-col justify-between scroll-element scale-up">
                 <div>
-                    <p class="font-montserrat font-bold text-colonial-white-950">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis saepe architecto nobis.</p>
+                    <p class="font-montserrat font-bold text-colonial-white-950">Membaca adalah Jembatan Ilmu. Dengan membaca kamu dapat menemukan banyak pertanyaan.</p>
                 </div>
                 <div>
-                    <p class="font-montserrat font-bold text-colonial-white-950">Fajar Maulana | <span class="font-normal">Professor</span> </p>
+                    <p class="font-montserrat font-bold text-colonial-white-950">Arif Hidayat | <span class="font-normal">Kepala Desa</span> </p>
                 </div>
             </div>
             <div class="news-hot-topic relative scroll-element fade-left">
@@ -129,7 +129,7 @@
                                     <p class="text-colonial-white-900 font-montserrat font-normal"><?= $newsItem['news_text'] ?></p>
                                 </div>
                             </div>
-                            <a href="/web_desa/pages/news_item.php" class="news-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
+                            <a href="/web_desa/pages/news_item.php?news_id=<?= $newsItem['id'] ?>" class="news-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
                                 Baca Berita
                             </a>
                         </div>
@@ -163,7 +163,7 @@
                                 <p class="text-colonial-white-900 font-montserrat font-normal"><?= $newsItem['news_text'] ?></p>
                             </div>
                         </div>
-                        <a href="" class="news-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
+                        <a href="/web_desa/pages/news_item.php?news_id=<?= $newsItem['id'] ?>" class="news-card-link d-inline-block w-full h-fit font-montserrat text-colonial-white-950 font-bold">
                             Baca Berita
                         </a>
                     </div>
@@ -190,13 +190,13 @@
                         <p class="font-bold text-colonial-white-950">Suweb</p>
                     </div>
                     <div class="footer-information-detail">
-                        <p class="text-colonial-white-950">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate tenetur unde enim ratione ab aliquid consequuntur ad tempora illo a.</p>
+                        <p class="text-colonial-white-950">Website resmi Desa Sukasari menyajikan informasi terkini seputar pemerintahan, pembangunan, kegiatan masyarakat, dan potensi desa.</p>
                     </div>
                 </div>
                 <div class="footer-detail bg-colonial-white-100 scroll-element scale-up">
                     <p class="text-colonial-white-950 font-bold">Alamat Kantor Desa</p>
                     <p class="text-colonial-white-950 font-normal">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia ullam eos dicta laboriosam aliquid expedita nihil 
+                        Jl. Raya Serang Jl. Raya Serang Cibarusah 17330 Kabupaten Bekasi Jawa Barat 
                     </p>
                 </div>
             </div>
@@ -207,7 +207,7 @@
                     <li><a href="" class="text-colonial-white-950">Program Kerja</a></li>
                     <li><a href="" class="text-colonial-white-950">Lokasi</a></li>
                     <li><a href="" class="text-colonial-white-950">Pengurus</a></li>
-                    <li><a href="" class="text-colonial-white-950">Berita Masyarakt</a></li>
+                    <li><a href="" class="text-colonial-white-950">Berita Masyarakat</a></li>
                     <li><a href="" class="text-colonial-white-950">Produk Lokal</a></li>
                 </ul>
             </div>

@@ -47,31 +47,35 @@
 .search-input {
     margin-bottom: 3rem;
 }
-.search-input > form {
+.search-input > form  {
     height: 70px;
     padding: 8px;
     margin-bottom: 16px;
     border-radius: 36px;
-    gap: 16px;
 }
 .search-input > form > div:nth-child(1) {
-    width: 100%;
-}
-.search-input > form > div:nth-child(1){
     display: none;
+}
+.search-input > form > div:nth-child(2) {
+    width: 100%;
+    height: 100%;
+    gap: 16px;
 }
 #search-input {
     width: 82%;
+    height: 100%;
     border-radius: 30px;
-    padding: 0 16px;
-    font-size: 16px;
+    padding: 0 20px;
+    font-size: 20px;
     outline: none;
 }
-.search-input > form > button {
+.search-input > form div:nth-child(2) > button {
     width: 15%;
-    font-size: 16px;
+    height: 100%;
+    font-size: 20px;
     border-radius: 30px;
 }
+
 .news-card-content {
     height: 80%;
 }
@@ -160,6 +164,14 @@
     .news-result-information {
         font-size: 16px;
     }
+    .search-input > form > div:nth-child(1) {
+        display: flex;
+        font-size: 24px;
+    }
+    .hero-page-news-container {
+        padding: 0;
+    }
+
 }
 
 @media (min-width: 992px) {

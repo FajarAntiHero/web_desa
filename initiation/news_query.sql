@@ -11,7 +11,7 @@ CREATE TABLE news (
 );
 
 CREATE TABLE news_comment (
-    id CHAR(10) PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     comment_time_send TIME NOT NULL,
     comment_date_send DATE NOT NULL,
     comment_text LONGTEXT NOT NULL,
@@ -32,14 +32,14 @@ INSERT INTO news (id, news_title, news_release_date, news_author, news_reader, n
 ('N009', 'Misteri Hilangnya Kapal Nelayan di Segitiga Bermuda', '2025-11-10', 'Investigasi', 2900, 150, 'Pencarian besar-besaran diluncurkan setelah kontak terakhir dengan kapal tersebut hilang secara misterius.', '/img/news/n009.jpg'),
 ('N010', 'Peluncuran Mobil Listrik Tercepat di Dunia', '2025-11-15', 'Otomotif News', 3800, 750, 'Perusahaan X merilis kendaraan bertenaga listrik yang mampu mencapai kecepatan 100 km/jam dalam waktu 1.8 detik.', '/img/news/n010.jpg');
 
-INSERT INTO news_comment (id, comment_time_send, comment_date_send, comment_text, news_id) VALUES
-('C001', '10:15:00', '2025-10-02', 'Penemuan yang sangat menarik! Semoga ada perkembangan lebih lanjut.', 'N001'),
-('C002', '14:30:00', '2025-10-06', 'Teknologi AI memang masa depan dunia medis.', 'N002'),
-('C003', '09:45:00', '2025-10-11', 'Kenaikan harga minyak ini sangat mempengaruhi biaya hidup kita semua.', 'N003'),
-('C004', '18:20:00', '2025-10-16', 'Festivalnya keren banget! Tahun depan harus ikut lagi.', 'N004'),
-('C005', '12:00:00', '2025-10-21', 'Kue coklatnya terlihat lezat, mau coba resepnya nih!', 'N005'),
-('C006', '20:10:00', '2025-10-26', 'Selamat untuk timnas! Semoga sukses di Piala Dunia nanti.', 'N006'),
-('C007', '11:25:00', '2025-11-02', 'Inovasi yang luar biasa untuk energi terbarukan.', 'N007'),
-('C008', '16:40:00', '2025-11-06', 'Tipsnya sangat membantu, terima kasih!', 'N008'),
-('C009', '13:55:00', '2025-11-11', 'Misteri Segitiga Bermuda selalu menarik untuk diikuti.', 'N009'),
-('C010', '15:05:00', '2025-11-16', 'Mobil listrik ini benar-benar revolusioner!', 'N010');
+INSERT INTO news_comment (comment_time_send, comment_date_send, comment_text, news_id) VALUES
+('10:15:00', '2025-10-02', 'Penemuan yang sangat menarik! Semoga ada perkembangan lebih lanjut.', 'N001'),
+('14:30:00', '2025-10-06', 'Teknologi AI memang masa depan dunia medis.', 'N002'),
+('09:45:00', '2025-10-11', 'Kenaikan harga minyak ini sangat mempengaruhi biaya hidup kita semua.', 'N003'),
+('18:20:00', '2025-10-16', 'Festivalnya keren banget! Tahun depan harus ikut lagi.', 'N004'),
+('12:00:00', '2025-10-21', 'Kue coklatnya terlihat lezat, mau coba resepnya nih!', 'N005'),
+('20:10:00', '2025-10-26', 'Selamat untuk timnas! Semoga sukses di Piala Dunia nanti.', 'N006'),
+('11:25:00', '2025-11-02', 'Inovasi yang luar biasa untuk energi terbarukan.', 'N007'),
+('16:40:00', '2025-11-06', 'Tipsnya sangat membantu, terima kasih!', 'N008'),
+('13:55:00', '2025-11-11', 'Misteri Segitiga Bermuda selalu menarik untuk diikuti.', 'N009'),
+('15:05:00', '2025-11-16', 'Mobil listrik ini benar-benar revolusioner!', 'N010');
